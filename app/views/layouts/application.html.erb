@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <%= stylesheet_link_tag('application', :media =>'all') %>
+</head>
+<nav class="main">
+  <% if current_user %>
+    <%= current_user.email %>
+    <%= link_to "Log out", logout_path, { method: "delete" } %></a>
+  <% else %>
+      <%= link_to "Login", 'login' %></a>
+      <%= link_to "Signup", 'signup' %></a>
+  <% end %>
+</nav>
+<%= yield %>
+</html>

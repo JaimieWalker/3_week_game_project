@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign up</title>
+    <%= stylesheet_link_tag('application', :media =>'all') %>
+    <%= javascript_include_tag('application') %>
+  </head>
+  <body>
+   <% if !current_user %>
+    <h1>Sign up</h1>
+  	 <%= form_for @user do |f| %>
+  	  First name: <%= f.text_field :first_name %><br>
+  	  Last name : <%= f.text_field :last_name %><br>
+  	  Email     : <%= f.text_field :email %><br>
+  	  Password  : <%= f.password_field :password %><br>
+    	<%= f.submit %>
+     <% end %>
+   <% else %>
+    <% controller.redirect_to(root_url) %>
+   <% end %>
+  </body>
+</html>

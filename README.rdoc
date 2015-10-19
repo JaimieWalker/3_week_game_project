@@ -1,0 +1,7 @@
+=====
+
+Basic User Authentication System for Rails
+~ Includes validations for user email and password
+~ Password Encrpytion using Bcrpyt gem 
+~ Root, signup, signin, signout urls 
+

@@ -1,0 +1,252 @@
+  [1m[36m (2.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20150921032946)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150921032946"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for ::1 at 2015-10-19 14:29:42 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ContentController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 86ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-10-19 14:29:43 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (3662.8ms)
+Completed 200 OK in 3735ms (Views: 3734.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/admin.self-ff1341830f71c5f787a3bd87223ccfaa4b0e394060588b66478b66ca49416750.css?body=1" for ::1 at 2015-10-19 14:29:47 -0400
+
+
+Started GET "/assets/application.self-1adade3fded52f1d2e52bcf4d4222e5289e5c16cf20c94b93120f8d539ff563b.css?body=1" for ::1 at 2015-10-19 14:29:47 -0400
+
+
+Started GET "/assets/content.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-19 14:29:47 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-19 14:29:47 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-19 14:29:47 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-19 14:29:47 -0400
+
+
+Started GET "/assets/content.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-19 14:29:47 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-19 14:29:47 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-19 14:29:47 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-19 14:29:47 -0400
+
+
+Started GET "/" for ::1 at 2015-10-19 14:29:49 -0400
+Processing by ContentController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-10-19 14:29:49 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (66.5ms)
+Completed 200 OK in 99ms (Views: 98.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-10-19 14:29:54 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oReozsTMeiZhPJLfTOE8KqR1i/rrcukQkjNYIHwhadxp6ov2RRZzJ38nNfKTOo3gsq37QfdDgmSoPiDZnvzj4g==", "session"=>{"email"=>"gil@gil.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "gil@gil.com"]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 29ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/login" for ::1 at 2015-10-19 14:29:54 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (71.5ms)
+Completed 200 OK in 112ms (Views: 110.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-10-19 14:29:56 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (165.2ms)
+Completed 200 OK in 221ms (Views: 203.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for ::1 at 2015-10-19 14:30:04 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4Xy1S81XP847+hUnhja2jMf0AL9zDpXI5prGe+H3nFApgZZzTI02zyXhsgpZ7QdG0SxwBG8//rzcl76CAyoWbg==", "user"=>{"first_name"=>"Gil", "last_name"=>"Velez", "email"=>"gvelezjr02@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'gvelezjr02@gmail.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Gil"], ["last_name", "Velez"], ["email", "gvelezjr02@gmail.com"], ["password_digest", "$2a$10$XXpyA0SLNJXgbYQKRVL3M.wBHS8lobLFoBoqFxw/tyAs46Iu.5WBC"], ["created_at", "2015-10-19 18:30:04.601778"], ["updated_at", "2015-10-19 18:30:04.601778"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 141ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2015-10-19 14:30:04 -0400
+Processing by ContentController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered content/index.html.erb within layouts/application (71.4ms)
+Completed 200 OK in 106ms (Views: 103.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-10-19 14:31:11 -0400
+Processing by ContentController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered content/index.html.erb within layouts/application (226.4ms)
+Completed 200 OK in 254ms (Views: 252.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-9da70418572a71afc8af4a47ad2127583ae7f407b7ae0fb1d3a41d17b8fc97b0.css?body=1" for ::1 at 2015-10-19 14:31:11 -0400
+
+
+Started DELETE "/logout" for ::1 at 2015-10-19 14:31:13 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-10-19 14:31:13 -0400
+Processing by ContentController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-10-19 14:31:13 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (67.3ms)
+Completed 200 OK in 94ms (Views: 93.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-10-19 14:31:15 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3PN7wLP7hQtbgl0OMTq4i4hfCW29rBNqUhFQoDJFpeEUDlj4MiGMCkWZ+iPu4QlBnod51qGdeB5oHChZ0Jgv3w==", "session"=>{"email"=>"gil@gil.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "gil@gil.com"]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for ::1 at 2015-10-19 14:31:15 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (72.1ms)
+Completed 200 OK in 100ms (Views: 98.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-10-19 14:31:16 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Hw//dDybaZe0APbSLEWlxQ8oSX772dG3W9Ck0PVFnAPX8txMvUFglqobUf/znhQPGfA5xefousNh3dwpF5gWPQ==", "session"=>{"email"=>"gil@gil.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "gil@gil.com"]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for ::1 at 2015-10-19 14:31:16 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (66.5ms)
+Completed 200 OK in 98ms (Views: 96.8ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20150921032946)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  DROP TABLE "users"
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20150921032946"]]
+  [1m[35m (1.9ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20150921032946)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150921032946"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/signup" for ::1 at 2015-10-19 14:32:05 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (316.2ms)
+Completed 200 OK in 377ms (Views: 350.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for ::1 at 2015-10-19 14:32:23 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g12G786U+Fq3GSsZ9ZgveMCs5mFr/lvrwRxk0juB4ERLoKXXT07xW6kCjDQqQ56y1nSW2nfPMJ/7ERwr2Vxqeg==", "user"=>{"first_name"=>"Gil", "last_name"=>"Velez", "email"=>"gil@gil.com", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'gil@gil.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:3000/signup
+Completed 302 Found in 120ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/signup" for ::1 at 2015-10-19 14:32:23 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (105.4ms)
+Completed 200 OK in 137ms (Views: 135.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-10-19 14:32:38 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8CtmU6/Ae7mpyMVAmgclCRCYqt0IrYW3ziG5OlNJ6q041kVrLhpyuLfTYm1F3JTDBkDaZhSc7sP0LMHDsZRgkw==", "user"=>{"first_name"=>"Gil", "last_name"=>"Velez", "email"=>"gvelezjr02@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'gvelezjr02@gmail.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Gil"], ["last_name", "Velez"], ["email", "gvelezjr02@gmail.com"], ["password_digest", "$2a$10$umR11pr.J2/UAgqxu2epau0N0lTpFWr9X9nNIRy3r.J51LWDDYfXu"], ["created_at", "2015-10-19 18:32:39.080238"], ["updated_at", "2015-10-19 18:32:39.080238"]]
+  [1m[35m (256.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 360ms (ActiveRecord: 256.9ms)
+
+
+Started GET "/" for ::1 at 2015-10-19 14:32:39 -0400
+Processing by ContentController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered content/index.html.erb within layouts/application (74.9ms)
+Completed 200 OK in 136ms (Views: 127.3ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/logout" for ::1 at 2015-10-19 14:32:41 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-10-19 14:32:41 -0400
+Processing by ContentController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-10-19 14:32:41 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (103.0ms)
+Completed 200 OK in 141ms (Views: 140.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-10-19 14:32:50 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EIjkosNUt2NKoRU5AUm2/cyJXQZRkqrDC0QEwbPx4+/YdceaQo6+YlS6shTekgc32lEtvU2jwbcxSXw4USxp0Q==", "session"=>{"email"=>"gvelezjr02@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "gvelezjr02@gmail.com"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 92ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-10-19 14:32:50 -0400
+Processing by ContentController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered content/index.html.erb within layouts/application (68.8ms)
+Completed 200 OK in 98ms (Views: 96.5ms | ActiveRecord: 0.2ms)
