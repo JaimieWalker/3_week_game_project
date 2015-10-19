@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-    get 'content/index' => 'content#index'
-    root :to => 'content#index'
+    get 'index' => 'games#index'
+    root :to => 'games#index'
     get '/signup' => 'users#new'
     get '/login' => 'sessions#new'
     post '/login' => 'sessions#create'
