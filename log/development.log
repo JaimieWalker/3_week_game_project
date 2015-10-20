@@ -4455,3 +4455,1747 @@ Processing by GamesController#index as HTML
   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
   Rendered games/index.html.erb within layouts/application (0.0ms)
 Completed 200 OK in 56ms (Views: 54.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (3.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20150921032946)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (16.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "password_digest" varchar, "room_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_users_on_room_id" ON "users" ("room_id")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150921032946"]]
+  [1m[36m (6.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreateRooms (20151020145457)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "rooms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "server_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_rooms_on_server_id" ON "rooms" ("server_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151020145457"]]
+  [1m[35m (2.2ms)[0m  commit transaction
+Migrating to CreateServer (20151020145623)
+  [1m[36m (0.7ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "servers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151020145623"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_rooms_on_server_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_rooms_on_server_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_room_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_room_id' AND type='index'
+[0m
+
+
+Started GET "/" for ::1 at 2015-10-20 15:45:44 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GamesController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 16ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-10-20 15:45:44 -0400
+Processing by SessionsController#new as HTML
+WARNING on line 10 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.sass:
+This selector doesn't have any properties and will not be rendered.
+
+WARNING on line 12 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.sass:
+This selector doesn't have any properties and will not be rendered.
+
+WARNING on line 14 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.sass:
+This selector doesn't have any properties and will not be rendered.
+
+  Rendered sessions/new.html.erb within layouts/application (518.5ms)
+Completed 200 OK in 677ms (Views: 675.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/games.self-1d909a4b34ec6d9efdcfd6864e9168a626bb749a5e1318a6eaec1e097718dade.css?body=1" for ::1 at 2015-10-20 15:45:45 -0400
+
+
+Started GET "/signup" for ::1 at 2015-10-20 15:45:48 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (154.9ms)
+Completed 200 OK in 264ms (Views: 235.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users" for ::1 at 2015-10-20 15:46:04 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AlfTcvWd+olwaw1Z5FGHEjYQ0Fou7P5j4/P3AdLN6p2lJEVSaGx+vcuj76dFYOwhXFAveic+CfoNByYS3ppT6w==", "user"=>{"first_name"=>"Gil", "last_name"=>"Velez", "email"=>"gvelezjr02@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'gvelezjr02@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["first_name", "Gil"], ["last_name", "Velez"], ["email", "gvelezjr02@gmail.com"], ["password_digest", "$2a$10$2FKQRbTrwgbwTy4Sof.ka.xmptv.5I2iA4prNLFXRpDJ21Uucfctm"], ["created_at", "2015-10-20 19:46:04.735438"], ["updated_at", "2015-10-20 19:46:04.735438"]]
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 154ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 15:46:04 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (63.2ms)
+Completed 200 OK in 148ms (Views: 137.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 15:46:44 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 76ms (Views: 75.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-9da70418572a71afc8af4a47ad2127583ae7f407b7ae0fb1d3a41d17b8fc97b0.css?body=1" for ::1 at 2015-10-20 15:46:44 -0400
+
+
+Started GET "/assets/content.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:46:44 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:46:44 -0400
+
+
+Started GET "/assets/games.self-1d909a4b34ec6d9efdcfd6864e9168a626bb749a5e1318a6eaec1e097718dade.css?body=1" for ::1 at 2015-10-20 15:46:44 -0400
+
+
+Started GET "/assets/content.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:46:44 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:46:44 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:46:44 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 15:46:44 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 15:46:44 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:46:44 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 15:46:44 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-20 15:46:44 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 15:47:35 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 15:47:51 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 78ms (Views: 76.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/content.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:47:52 -0400
+
+
+Started GET "/assets/games.self-1d909a4b34ec6d9efdcfd6864e9168a626bb749a5e1318a6eaec1e097718dade.css?body=1" for ::1 at 2015-10-20 15:47:52 -0400
+
+
+Started GET "/assets/application.self-9da70418572a71afc8af4a47ad2127583ae7f407b7ae0fb1d3a41d17b8fc97b0.css?body=1" for ::1 at 2015-10-20 15:47:52 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:47:52 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:47:52 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 15:47:52 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 15:47:52 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 15:47:52 -0400
+
+
+Started GET "/assets/content.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:47:52 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:47:52 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:47:52 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-20 15:47:52 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 15:48:20 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+WARNING on line 10 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.sass:
+This selector doesn't have any properties and will not be rendered.
+
+WARNING on line 12 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.sass:
+This selector doesn't have any properties and will not be rendered.
+
+WARNING on line 14 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.sass:
+This selector doesn't have any properties and will not be rendered.
+
+Completed 200 OK in 125ms (Views: 123.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/content.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:48:20 -0400
+
+
+Started GET "/assets/games.self-213e16e1e168f4ec6a6e5effee78c3cde8ffbe171aa7bf25fa75d4397266901d.css?body=1" for ::1 at 2015-10-20 15:48:20 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:48:20 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 15:48:20 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:48:20 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 15:48:20 -0400
+
+
+Started GET "/assets/application.self-9da70418572a71afc8af4a47ad2127583ae7f407b7ae0fb1d3a41d17b8fc97b0.css?body=1" for ::1 at 2015-10-20 15:48:20 -0400
+
+
+Started GET "/assets/content.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:48:20 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:48:20 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:48:20 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-20 15:48:20 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 15:48:20 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 15:48:52 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 109ms (Views: 107.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/content.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:48:52 -0400
+
+
+Started GET "/assets/games.self-213e16e1e168f4ec6a6e5effee78c3cde8ffbe171aa7bf25fa75d4397266901d.css?body=1" for ::1 at 2015-10-20 15:48:52 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:48:52 -0400
+
+
+Started GET "/assets/application.self-9da70418572a71afc8af4a47ad2127583ae7f407b7ae0fb1d3a41d17b8fc97b0.css?body=1" for ::1 at 2015-10-20 15:48:52 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:48:52 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 15:48:52 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 15:48:52 -0400
+
+
+Started GET "/assets/content.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:48:52 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 15:48:52 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:48:52 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:48:52 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-20 15:48:52 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 15:49:25 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 75ms (Views: 72.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-9da70418572a71afc8af4a47ad2127583ae7f407b7ae0fb1d3a41d17b8fc97b0.css?body=1" for ::1 at 2015-10-20 15:49:25 -0400
+
+
+Started GET "/assets/content.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:49:25 -0400
+
+
+Started GET "/assets/games.self-213e16e1e168f4ec6a6e5effee78c3cde8ffbe171aa7bf25fa75d4397266901d.css?body=1" for ::1 at 2015-10-20 15:49:25 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:49:25 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 15:49:25 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 15:49:25 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:49:25 -0400
+
+
+Started GET "/assets/content.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:49:25 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 15:49:25 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:49:25 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:49:25 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-20 15:49:26 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 15:51:22 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 72ms (Views: 70.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/games.self-213e16e1e168f4ec6a6e5effee78c3cde8ffbe171aa7bf25fa75d4397266901d.css?body=1" for ::1 at 2015-10-20 15:51:22 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:51:22 -0400
+
+
+Started GET "/assets/content.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:51:22 -0400
+
+
+Started GET "/assets/application.self-9da70418572a71afc8af4a47ad2127583ae7f407b7ae0fb1d3a41d17b8fc97b0.css?body=1" for ::1 at 2015-10-20 15:51:22 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:51:22 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 15:51:22 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 15:51:22 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 15:51:23 -0400
+
+
+Started GET "/assets/content.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:51:23 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:51:23 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:51:23 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-20 15:51:23 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 15:52:00 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 80ms (Views: 78.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/content.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:52:00 -0400
+
+
+Started GET "/assets/games.self-213e16e1e168f4ec6a6e5effee78c3cde8ffbe171aa7bf25fa75d4397266901d.css?body=1" for ::1 at 2015-10-20 15:52:00 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:52:00 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 15:52:00 -0400
+
+
+Started GET "/assets/application.self-9da70418572a71afc8af4a47ad2127583ae7f407b7ae0fb1d3a41d17b8fc97b0.css?body=1" for ::1 at 2015-10-20 15:52:00 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:52:00 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 15:52:00 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 15:52:00 -0400
+
+
+Started GET "/assets/content.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:52:00 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:52:00 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:52:00 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-20 15:52:00 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 15:52:50 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+WARNING on line 10 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.sass:
+This selector doesn't have any properties and will not be rendered.
+
+WARNING on line 12 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.sass:
+This selector doesn't have any properties and will not be rendered.
+
+WARNING on line 14 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.sass:
+This selector doesn't have any properties and will not be rendered.
+
+Completed 200 OK in 120ms (Views: 118.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-9da70418572a71afc8af4a47ad2127583ae7f407b7ae0fb1d3a41d17b8fc97b0.css?body=1" for ::1 at 2015-10-20 15:52:50 -0400
+
+
+Started GET "/assets/content.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:52:50 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:52:50 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:52:50 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 15:52:50 -0400
+
+
+Started GET "/assets/games.self-08c96ac20f737aa2aaa9fbfad582de996fb33ee0d083a1d58b8140262985b95c.css?body=1" for ::1 at 2015-10-20 15:52:50 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 15:52:50 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 15:52:50 -0400
+
+
+Started GET "/assets/content.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:52:50 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:52:50 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:52:50 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-20 15:52:50 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 15:52:58 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+WARNING on line 10 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.sass:
+This selector doesn't have any properties and will not be rendered.
+
+WARNING on line 12 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.sass:
+This selector doesn't have any properties and will not be rendered.
+
+WARNING on line 14 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.sass:
+This selector doesn't have any properties and will not be rendered.
+
+Completed 200 OK in 130ms (Views: 128.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/content.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:52:58 -0400
+
+
+Started GET "/assets/application.self-9da70418572a71afc8af4a47ad2127583ae7f407b7ae0fb1d3a41d17b8fc97b0.css?body=1" for ::1 at 2015-10-20 15:52:58 -0400
+
+
+Started GET "/assets/games.self-6d98161b5e70e3ad5b1e10e6fe8ca50c74ffc24ea70442d1756da51ee2945aaf.css?body=1" for ::1 at 2015-10-20 15:52:58 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:52:58 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 15:52:58 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:52:58 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 15:52:58 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 15:52:58 -0400
+
+
+Started GET "/assets/content.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:52:58 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:52:58 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:52:58 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-20 15:52:58 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 15:53:35 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+WARNING on line 4 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/application.sass:
+This selector doesn't have any properties and will not be rendered.
+
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (Invalid CSS after "*/": expected identifier, was ""):
+    1: <%= stylesheet_link_tag('application', media:'all') %>
+    2: <%= javascript_include_tag('application', media: 'all') %>
+    3: 
+    4: <nav>
+  app/assets/stylesheets/application.sass:4
+  app/views/layouts/application.html.erb:1:in `_app_views_layouts_application_html_erb___3103672025805149312_70289896146120'
+
+
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (19.9ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.7ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (139.2ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (99.3ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (229.2ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 15:56:45 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (Invalid CSS after "@import ": expected file to import (string or url()), was "content.sass;"):
+    1: <%= stylesheet_link_tag('application', media:'all') %>
+    2: <%= javascript_include_tag('application', media: 'all') %>
+    3: 
+    4: <nav>
+  app/assets/stylesheets/application.scss:1
+  app/views/layouts/application.html.erb:1:in `_app_views_layouts_application_html_erb___3103672025805149312_70289896146120'
+
+
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (17.8ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.2ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (138.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (92.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (206.3ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 15:57:22 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 140ms (Views: 138.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-6d98161b5e70e3ad5b1e10e6fe8ca50c74ffc24ea70442d1756da51ee2945aaf.css?body=1" for ::1 at 2015-10-20 15:57:22 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 15:58:47 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 173ms (Views: 171.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/games.self-6d98161b5e70e3ad5b1e10e6fe8ca50c74ffc24ea70442d1756da51ee2945aaf.css?body=1" for ::1 at 2015-10-20 15:58:47 -0400
+
+
+Started GET "/assets/main.self-6d98161b5e70e3ad5b1e10e6fe8ca50c74ffc24ea70442d1756da51ee2945aaf.css?body=1" for ::1 at 2015-10-20 15:58:47 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:58:47 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:58:47 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 15:58:47 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 15:58:47 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:58:47 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 15:58:47 -0400
+
+
+Started GET "/assets/content.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:58:47 -0400
+
+
+Started GET "/assets/application.self-1adade3fded52f1d2e52bcf4d4222e5289e5c16cf20c94b93120f8d539ff563b.css?body=1" for ::1 at 2015-10-20 15:58:47 -0400
+
+
+Started GET "/assets/content.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:58:47 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:58:47 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-20 15:58:47 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 15:59:13 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 88ms (Views: 86.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-caaa344e085f7ea74595f199268d8ace42d044051fede4fc24d01c351f8484d8.css?body=1" for ::1 at 2015-10-20 15:59:13 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 15:59:40 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 120ms (Views: 118.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/main.self-6d98161b5e70e3ad5b1e10e6fe8ca50c74ffc24ea70442d1756da51ee2945aaf.css?body=1" for ::1 at 2015-10-20 15:59:40 -0400
+
+
+Started GET "/assets/content.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:59:40 -0400
+
+
+Started GET "/assets/games.self-6d98161b5e70e3ad5b1e10e6fe8ca50c74ffc24ea70442d1756da51ee2945aaf.css?body=1" for ::1 at 2015-10-20 15:59:40 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:59:40 -0400
+
+
+Started GET "/assets/application.self-6768baecc7660d572236fe9189778738ff2e866ddf517e508f842299345dcc4b.css?body=1" for ::1 at 2015-10-20 15:59:40 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 15:59:40 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 15:59:40 -0400
+
+
+Started GET "/assets/content.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:59:40 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 15:59:40 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 15:59:40 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:59:40 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:59:40 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-20 15:59:40 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 15:59:48 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 89ms (Views: 87.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 15:59:49 -0400
+
+
+Started GET "/assets/main.self-6d98161b5e70e3ad5b1e10e6fe8ca50c74ffc24ea70442d1756da51ee2945aaf.css?body=1" for ::1 at 2015-10-20 15:59:49 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 15:59:49 -0400
+
+
+Started GET "/assets/application.self-1adade3fded52f1d2e52bcf4d4222e5289e5c16cf20c94b93120f8d539ff563b.css?body=1" for ::1 at 2015-10-20 15:59:49 -0400
+
+
+Started GET "/assets/content.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:59:49 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:59:49 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-20 15:59:49 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 15:59:49 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 15:59:49 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 16:01:14 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 115ms (Views: 114.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/content.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:01:14 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 16:01:14 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:01:14 -0400
+
+
+Started GET "/assets/games.self-6d98161b5e70e3ad5b1e10e6fe8ca50c74ffc24ea70442d1756da51ee2945aaf.css?body=1" for ::1 at 2015-10-20 16:01:14 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:01:14 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 16:01:14 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 16:01:14 -0400
+
+
+Started GET "/assets/application.self-1adade3fded52f1d2e52bcf4d4222e5289e5c16cf20c94b93120f8d539ff563b.css?body=1" for ::1 at 2015-10-20 16:01:14 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:01:14 -0400
+
+
+Started GET "/assets/content.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:01:14 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:01:14 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-20 16:01:14 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 16:02:02 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+WARNING on line 10 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.sass:
+This selector doesn't have any properties and will not be rendered.
+
+WARNING on line 12 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.sass:
+This selector doesn't have any properties and will not be rendered.
+
+WARNING on line 14 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.sass:
+This selector doesn't have any properties and will not be rendered.
+
+Completed 200 OK in 123ms (Views: 121.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-1adade3fded52f1d2e52bcf4d4222e5289e5c16cf20c94b93120f8d539ff563b.css?body=1" for ::1 at 2015-10-20 16:02:03 -0400
+
+
+Started GET "/assets/games.self-1b49fce98b7156ffcfdac05b2ff8937268982c22268a7c85539038a3027575c7.css?body=1" for ::1 at 2015-10-20 16:02:03 -0400
+
+
+Started GET "/assets/content.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:02:03 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:02:03 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:02:03 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 16:02:03 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 16:02:03 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 16:02:03 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:02:03 -0400
+
+
+Started GET "/assets/content.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:02:03 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:02:03 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-20 16:02:03 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 16:03:15 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 137ms (Views: 135.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/content.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:03:15 -0400
+
+
+Started GET "/assets/games.self-6d98161b5e70e3ad5b1e10e6fe8ca50c74ffc24ea70442d1756da51ee2945aaf.css?body=1" for ::1 at 2015-10-20 16:03:15 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:03:15 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 16:03:15 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 16:03:15 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 16:03:15 -0400
+
+
+Started GET "/assets/application.self-1adade3fded52f1d2e52bcf4d4222e5289e5c16cf20c94b93120f8d539ff563b.css?body=1" for ::1 at 2015-10-20 16:03:15 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:03:15 -0400
+
+
+Started GET "/assets/content.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:03:15 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:03:15 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:03:15 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-20 16:03:15 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 16:04:09 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 127ms (Views: 125.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-9da70418572a71afc8af4a47ad2127583ae7f407b7ae0fb1d3a41d17b8fc97b0.css?body=1" for ::1 at 2015-10-20 16:04:09 -0400
+
+
+Started GET "/assets/content.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:04:09 -0400
+
+
+Started GET "/assets/games.self-6d98161b5e70e3ad5b1e10e6fe8ca50c74ffc24ea70442d1756da51ee2945aaf.css?body=1" for ::1 at 2015-10-20 16:04:09 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 16:04:09 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:04:09 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 16:04:09 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:04:09 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 16:04:09 -0400
+
+
+Started GET "/assets/content.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:04:09 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:04:09 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:04:09 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-20 16:04:09 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 16:05:57 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (File to import not found or unreadable: bootstrap-sprockets.
+Load paths:
+  /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/images
+  /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/javascripts
+  /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets
+  /Users/gilbertovelez/Desktop/3_week_game_project/vendor/assets/javascripts
+  /Users/gilbertovelez/Desktop/3_week_game_project/vendor/assets/stylesheets
+  /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/turbolinks-2.5.3/lib/assets/javascripts
+  /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/jquery-rails-4.0.5/vendor/assets/javascripts
+  /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/coffee-rails-4.1.0/lib/assets/javascripts):
+    1: <%= stylesheet_link_tag('application', media:'all') %>
+    2: <%= javascript_include_tag('application', media: 'all') %>
+    3: 
+    4: <nav>
+  app/assets/stylesheets/main.scss:1
+  app/assets/stylesheets/application.scss:1
+  app/views/layouts/application.html.erb:1:in `_app_views_layouts_application_html_erb___3103672025805149312_70289896146120'
+
+
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (18.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.8ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (132.4ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (95.6ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (217.5ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 16:06:55 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (1.7ms)
+WARNING on line 10 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.sass:
+This selector doesn't have any properties and will not be rendered.
+
+WARNING on line 12 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.sass:
+This selector doesn't have any properties and will not be rendered.
+
+WARNING on line 14 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.sass:
+This selector doesn't have any properties and will not be rendered.
+
+Completed 200 OK in 6008ms (Views: 5965.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.self-2f94f72e4f829f381a9fa3dbb518fec7ef2795df40ade5866a2ed055e9e5966e.css?body=1" for ::1 at 2015-10-20 16:07:02 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 16:08:23 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 3137ms (Views: 3135.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 16:12:41 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+WARNING on line 10 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+WARNING on line 12 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+WARNING on line 14 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+DEPRECATION WARNING: Extra .css in SASS file is unnecessary. Rename /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass to /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.sass. (called from _app_views_layouts_application_html_erb__1734842628529095281_70215498570340 at /Users/gilbertovelez/Desktop/3_week_game_project/app/views/layouts/application.html.erb:1)
+DEPRECATION WARNING: Extra .css in SASS file is unnecessary. Rename /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass to /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.sass. (called from _app_views_layouts_application_html_erb__1734842628529095281_70215498570340 at /Users/gilbertovelez/Desktop/3_week_game_project/app/views/layouts/application.html.erb:1)
+Completed 200 OK in 3223ms (Views: 3221.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/games.self-a7e02a7cdb5bb7a251c3d9b65a68378ba079b7f3ff035d6ba2a93bef37ee608c.css?body=1" for ::1 at 2015-10-20 16:12:44 -0400
+
+
+Started GET "/assets/main.self-56b44fa0877bb769ae5a6190e4009dd4d6eaa8cd5369d7327355c07dc25086e8.css?body=1" for ::1 at 2015-10-20 16:12:44 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:12:45 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 16:12:45 -0400
+
+
+Started GET "/assets/content.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:12:45 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:12:45 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 16:12:45 -0400
+
+
+Started GET "/assets/application.self-9da70418572a71afc8af4a47ad2127583ae7f407b7ae0fb1d3a41d17b8fc97b0.css?body=1" for ::1 at 2015-10-20 16:12:45 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 16:12:45 -0400
+
+
+Started GET "/assets/content.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:12:45 -0400
+
+
+Started GET "/assets/games.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:12:45 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:12:45 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:12:45 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-20 16:12:45 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 16:14:39 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 226ms (Views: 224.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/main.self-56b44fa0877bb769ae5a6190e4009dd4d6eaa8cd5369d7327355c07dc25086e8.css?body=1" for ::1 at 2015-10-20 16:14:39 -0400
+
+
+Started GET "/assets/games.self-a7e02a7cdb5bb7a251c3d9b65a68378ba079b7f3ff035d6ba2a93bef37ee608c.css?body=1" for ::1 at 2015-10-20 16:14:39 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:14:39 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:14:39 -0400
+
+
+Started GET "/assets/content.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:14:39 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 16:14:39 -0400
+
+
+Started GET "/assets/application.self-ef88f69bc25d98c38c46f5f6c510218fc623ec5bb9074ab420e3bdb7f5290b19.css?body=1" for ::1 at 2015-10-20 16:14:39 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 16:14:39 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 16:14:39 -0400
+
+
+Started GET "/assets/content.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:14:39 -0400
+
+
+Started GET "/assets/games.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:14:39 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:14:39 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:14:40 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-20 16:14:40 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 16:17:31 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 3049ms (Views: 3048.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-ef88f69bc25d98c38c46f5f6c510218fc623ec5bb9074ab420e3bdb7f5290b19.css?body=1" for ::1 at 2015-10-20 16:17:34 -0400
+
+
+Started GET "/assets/content.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:17:34 -0400
+
+
+Started GET "/assets/main.self-812b5b3ff5742bdf969b463ee7a055fb42716d99f4f424b6d42bbf87f2b00f30.css?body=1" for ::1 at 2015-10-20 16:17:34 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:17:34 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 16:17:34 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:17:34 -0400
+
+
+Started GET "/assets/games.self-a7e02a7cdb5bb7a251c3d9b65a68378ba079b7f3ff035d6ba2a93bef37ee608c.css?body=1" for ::1 at 2015-10-20 16:17:34 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 16:17:34 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 16:17:34 -0400
+
+
+Started GET "/assets/content.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:17:34 -0400
+
+
+Started GET "/assets/games.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:17:34 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:17:34 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:17:34 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-20 16:17:34 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 16:18:48 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (Invalid variable: "$black = #000000".):
+    1: <%= stylesheet_link_tag('application', media:'all') %>
+    2: <%= javascript_include_tag('application', media: 'all') %>
+    3: 
+    4: <nav>
+  app/assets/stylesheets/main.css.sass:4
+  app/views/layouts/application.html.erb:1:in `_app_views_layouts_application_html_erb__1734842628529095281_70215498570340'
+
+
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (16.6ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (33.0ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (144.8ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (90.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (206.9ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 16:19:20 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (Invalid CSS after "...trap-sprockets"": expected selector or at-rule, was "@import "bootst..."):
+    1: <%= stylesheet_link_tag('application', media:'all') %>
+    2: <%= javascript_include_tag('application', media: 'all') %>
+    3: 
+    4: <nav>
+  app/assets/stylesheets/main.css.scss:2
+  app/views/layouts/application.html.erb:1:in `_app_views_layouts_application_html_erb__1734842628529095281_70215498570340'
+
+
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.4ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.4ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (115.0ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (98.4ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (212.8ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 16:19:32 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 130ms (Views: 128.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-ef88f69bc25d98c38c46f5f6c510218fc623ec5bb9074ab420e3bdb7f5290b19.css?body=1" for ::1 at 2015-10-20 16:19:32 -0400
+
+
+Started GET "/assets/main.self-812b5b3ff5742bdf969b463ee7a055fb42716d99f4f424b6d42bbf87f2b00f30.css?body=1" for ::1 at 2015-10-20 16:19:32 -0400
+
+
+Started GET "/assets/games.self-a7e02a7cdb5bb7a251c3d9b65a68378ba079b7f3ff035d6ba2a93bef37ee608c.css?body=1" for ::1 at 2015-10-20 16:19:32 -0400
+
+
+Started GET "/assets/content.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:19:32 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:19:32 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 16:19:32 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:19:32 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 16:19:32 -0400
+
+
+Started GET "/assets/content.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:19:32 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 16:19:32 -0400
+
+
+Started GET "/assets/games.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:19:32 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:19:32 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:19:32 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-20 16:19:32 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 16:20:31 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 3202ms (Views: 3200.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/main.self-812b5b3ff5742bdf969b463ee7a055fb42716d99f4f424b6d42bbf87f2b00f30.css?body=1" for ::1 at 2015-10-20 16:20:34 -0400
+
+
+Started GET "/assets/games.self-a7e02a7cdb5bb7a251c3d9b65a68378ba079b7f3ff035d6ba2a93bef37ee608c.css?body=1" for ::1 at 2015-10-20 16:20:34 -0400
+
+
+Started GET "/assets/content.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:20:34 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:20:34 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 16:20:34 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:20:34 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 16:20:34 -0400
+
+
+Started GET "/assets/content.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:20:34 -0400
+
+
+Started GET "/assets/games.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:20:34 -0400
+
+
+Started GET "/assets/application.self-ef88f69bc25d98c38c46f5f6c510218fc623ec5bb9074ab420e3bdb7f5290b19.css?body=1" for ::1 at 2015-10-20 16:20:34 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:20:34 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:20:35 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 16:20:35 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-20 16:20:35 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 16:20:52 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+WARNING on line 10 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+WARNING on line 12 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+WARNING on line 14 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (Undefined variable: "$black".):
+    1: <%= stylesheet_link_tag('application', media:'all') %>
+    2: <%= javascript_include_tag('application', media: 'all') %>
+    3: 
+    4: <nav>
+  app/assets/stylesheets/games.css.sass:6
+  app/views/layouts/application.html.erb:1:in `_app_views_layouts_application_html_erb__1734842628529095281_70215498570340'
+
+
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (17.3ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (120.9ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (89.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (203.6ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 16:21:06 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 137ms (Views: 135.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 16:21:22 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+WARNING on line 10 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+WARNING on line 12 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+WARNING on line 14 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+Completed 200 OK in 234ms (Views: 233.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/main.self-812b5b3ff5742bdf969b463ee7a055fb42716d99f4f424b6d42bbf87f2b00f30.css?body=1" for ::1 at 2015-10-20 16:21:22 -0400
+
+
+Started GET "/assets/games.self-75ed52dfb9b83253e1adfc6263fa85c837cfdd9f86bc00a417c1cee0a024ba30.css?body=1" for ::1 at 2015-10-20 16:21:22 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 16:21:22 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:21:22 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:21:22 -0400
+
+
+Started GET "/assets/content.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:21:22 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 16:21:22 -0400
+
+
+Started GET "/assets/content.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:21:22 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 16:21:22 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:21:22 -0400
+
+
+Started GET "/assets/application.self-ef88f69bc25d98c38c46f5f6c510218fc623ec5bb9074ab420e3bdb7f5290b19.css?body=1" for ::1 at 2015-10-20 16:21:22 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:21:22 -0400
+
+
+Started GET "/assets/games.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:21:22 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-20 16:21:22 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 16:25:27 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+DEPRECATION WARNING: Extra .css in SASS file is unnecessary. Rename /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/main.css.sass to /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/main.sass. (called from _app_views_layouts_application_html_erb__1734842628529095281_70215498570340 at /Users/gilbertovelez/Desktop/3_week_game_project/app/views/layouts/application.html.erb:1)
+DEPRECATION WARNING: Extra .css in SASS file is unnecessary. Rename /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass to /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.sass. (called from _app_views_layouts_application_html_erb__1734842628529095281_70215498570340 at /Users/gilbertovelez/Desktop/3_week_game_project/app/views/layouts/application.html.erb:1)
+DEPRECATION WARNING: Extra .css in SASS file is unnecessary. Rename /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/main.css.sass to /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/main.sass. (called from _app_views_layouts_application_html_erb__1734842628529095281_70215498570340 at /Users/gilbertovelez/Desktop/3_week_game_project/app/views/layouts/application.html.erb:1)
+DEPRECATION WARNING: Extra .css in SASS file is unnecessary. Rename /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass to /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.sass. (called from _app_views_layouts_application_html_erb__1734842628529095281_70215498570340 at /Users/gilbertovelez/Desktop/3_week_game_project/app/views/layouts/application.html.erb:1)
+Completed 200 OK in 3239ms (Views: 3237.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-95f6f783845f02ba8c006aedc97d1437c34ec496efbcb753013a16b5f9fbeece.css?body=1" for ::1 at 2015-10-20 16:25:31 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 16:26:29 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+WARNING on line 3 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/application.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (Invalid CSS after "*/": expected identifier, was ""):
+    1: <%= stylesheet_link_tag('application', media:'all') %>
+    2: <%= javascript_include_tag('application', media: 'all') %>
+    3: 
+    4: <nav>
+  app/assets/stylesheets/application.css.sass:3
+  app/views/layouts/application.html.erb:1:in `_app_views_layouts_application_html_erb__1734842628529095281_70215498570340'
+
+
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (19.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.6ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (127.3ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (91.2ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (204.6ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 16:27:45 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (File to import not found or unreadable: self.
+Load paths:
+  /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/images
+  /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/javascripts
+  /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets
+  /Users/gilbertovelez/Desktop/3_week_game_project/vendor/assets/javascripts
+  /Users/gilbertovelez/Desktop/3_week_game_project/vendor/assets/stylesheets
+  /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/turbolinks-2.5.3/lib/assets/javascripts
+  /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/jquery-rails-4.0.5/vendor/assets/javascripts
+  /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/coffee-rails-4.1.0/lib/assets/javascripts
+  /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/bootstrap-sass-3.3.5.1/assets/stylesheets
+  /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/bootstrap-sass-3.3.5.1/assets/javascripts
+  /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/bootstrap-sass-3.3.5.1/assets/fonts
+  /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/bootstrap-sass-3.3.5.1/assets/images
+  /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/bootstrap-sass-3.3.5.1/assets/stylesheets):
+    1: <%= stylesheet_link_tag('application', media:'all') %>
+    2: <%= javascript_include_tag('application', media: 'all') %>
+    3: 
+    4: <nav>
+  app/assets/stylesheets/application.css.sass:1
+  app/views/layouts/application.html.erb:1:in `_app_views_layouts_application_html_erb__1734842628529095281_70215498570340'
+
+
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (17.8ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.7ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (128.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (91.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (209.7ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 16:27:56 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+DEPRECATION WARNING: Extra .css in SASS file is unnecessary. Rename /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/main.css.sass to /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/main.sass. (called from _app_views_layouts_application_html_erb__1734842628529095281_70215498570340 at /Users/gilbertovelez/Desktop/3_week_game_project/app/views/layouts/application.html.erb:1)
+DEPRECATION WARNING: Extra .css in SASS file is unnecessary. Rename /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass to /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.sass. (called from _app_views_layouts_application_html_erb__1734842628529095281_70215498570340 at /Users/gilbertovelez/Desktop/3_week_game_project/app/views/layouts/application.html.erb:1)
+DEPRECATION WARNING: Extra .css in SASS file is unnecessary. Rename /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/main.css.sass to /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/main.sass. (called from _app_views_layouts_application_html_erb__1734842628529095281_70215498570340 at /Users/gilbertovelez/Desktop/3_week_game_project/app/views/layouts/application.html.erb:1)
+DEPRECATION WARNING: Extra .css in SASS file is unnecessary. Rename /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass to /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.sass. (called from _app_views_layouts_application_html_erb__1734842628529095281_70215498570340 at /Users/gilbertovelez/Desktop/3_week_game_project/app/views/layouts/application.html.erb:1)
+Completed 200 OK in 3189ms (Views: 3187.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-e3333fc8b21d8224afded74e999d4585fc44c5cde82737b6e7ae9ef6ddc42e31.css?body=1" for ::1 at 2015-10-20 16:27:59 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 16:28:25 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+DEPRECATION WARNING: Extra .css in SASS file is unnecessary. Rename /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/main.css.sass to /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/main.sass. (called from _app_views_layouts_application_html_erb__1734842628529095281_70215498570340 at /Users/gilbertovelez/Desktop/3_week_game_project/app/views/layouts/application.html.erb:1)
+DEPRECATION WARNING: Extra .css in SASS file is unnecessary. Rename /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass to /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.sass. (called from _app_views_layouts_application_html_erb__1734842628529095281_70215498570340 at /Users/gilbertovelez/Desktop/3_week_game_project/app/views/layouts/application.html.erb:1)
+WARNING on line 10 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+WARNING on line 12 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+WARNING on line 14 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+DEPRECATION WARNING: Extra .css in SASS file is unnecessary. Rename /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/main.css.sass to /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/main.sass. (called from _app_views_layouts_application_html_erb__1734842628529095281_70215498570340 at /Users/gilbertovelez/Desktop/3_week_game_project/app/views/layouts/application.html.erb:1)
+DEPRECATION WARNING: Extra .css in SASS file is unnecessary. Rename /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass to /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.sass. (called from _app_views_layouts_application_html_erb__1734842628529095281_70215498570340 at /Users/gilbertovelez/Desktop/3_week_game_project/app/views/layouts/application.html.erb:1)
+Completed 200 OK in 2838ms (Views: 2837.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 16:29:18 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (Undefined variable: "$black".):
+    1: <%= stylesheet_link_tag('application', media:'all') %>
+    2: <%= javascript_include_tag('application', media: 'all') %>
+    3: 
+    4: <nav>
+  app/assets/stylesheets/games.css.sass:6
+  app/views/layouts/application.html.erb:1:in `_app_views_layouts_application_html_erb__1734842628529095281_70215498570340'
+
+
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (21.0ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.3ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (125.9ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (91.8ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (202.1ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 16:29:39 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 500 Internal Server Error in 3882ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (Undefined variable: "$black".):
+    1: <%= stylesheet_link_tag('application', media:'all') %>
+    2: <%= javascript_include_tag('application', media: 'all') %>
+    3: 
+    4: <nav>
+  app/assets/stylesheets/games.css.sass:6
+  app/views/layouts/application.html.erb:1:in `_app_views_layouts_application_html_erb__1734842628529095281_70215498570340'
+
+
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (17.4ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.9ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (128.6ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (94.6ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (210.6ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 16:30:22 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (Undefined variable: "$black".):
+    1: <%= stylesheet_link_tag('application', media:'all') %>
+    2: <%= javascript_include_tag('application', media: 'all') %>
+    3: 
+    4: <nav>
+  app/assets/stylesheets/games.css.sass:6
+  app/views/layouts/application.html.erb:1:in `_app_views_layouts_application_html_erb__1734842628529095281_70215498570340'
+
+
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (18.0ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.4ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (134.3ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (91.4ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (206.0ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 16:31:15 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 500 Internal Server Error in 2743ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (Undefined variable: "$black".):
+    1: <%= stylesheet_link_tag('application', media:'all') %>
+    2: <%= javascript_include_tag('application', media: 'all') %>
+    3: 
+    4: <nav>
+  app/assets/stylesheets/games.css.sass:6
+  app/views/layouts/application.html.erb:1:in `_app_views_layouts_application_html_erb__1734842628529095281_70215498570340'
+
+
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (27.7ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.9ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (143.2ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (142.4ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (273.4ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 16:31:54 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+WARNING on line 12 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+WARNING on line 14 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+WARNING on line 16 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+Completed 200 OK in 3138ms (Views: 3137.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-ef88f69bc25d98c38c46f5f6c510218fc623ec5bb9074ab420e3bdb7f5290b19.css?body=1" for ::1 at 2015-10-20 16:31:57 -0400
+
+
+Started GET "/assets/main.self-812b5b3ff5742bdf969b463ee7a055fb42716d99f4f424b6d42bbf87f2b00f30.css?body=1" for ::1 at 2015-10-20 16:31:57 -0400
+
+
+Started GET "/assets/content.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:31:57 -0400
+
+
+Started GET "/assets/games.self-4eed91f311c4c45ff9011ad5589894ef69fb15975f38439a86abf50677d9974d.css?body=1" for ::1 at 2015-10-20 16:31:57 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:31:57 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 16:31:57 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 16:31:57 -0400
+
+
+Started GET "/assets/games.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:31:57 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:31:57 -0400
+
+
+Started GET "/assets/content.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:31:57 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 16:31:57 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 16:31:57 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-20 16:31:57 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-20 16:31:57 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 16:34:51 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 511ms (Views: 466.6ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/logout" for ::1 at 2015-10-20 16:34:55 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 16:34:55 -0400
+Processing by GamesController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-10-20 16:34:55 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (33.5ms)
+Completed 200 OK in 347ms (Views: 346.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-10-20 16:34:57 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qHoef5Osh4y0QhMF6pRleGzV4Ht0Kd+uU6gWTuJzIKkPCYhfDl0DuA+K8ftLpQ5LBpUfW337KDe9XMdd7iSZ3w==", "session"=>{"email"=>"gvelezjr02@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "gvelezjr02@gmail.com"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 96ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 16:34:57 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 134ms (Views: 131.7ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/logout" for ::1 at 2015-10-20 16:34:59 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 16:34:59 -0400
+Processing by GamesController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-10-20 16:34:59 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 253ms (Views: 251.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-10-20 16:35:01 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 153ms (Views: 152.2ms | ActiveRecord: 0.0ms)
