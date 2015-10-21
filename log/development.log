@@ -6199,3 +6199,2090 @@ Started GET "/signup" for ::1 at 2015-10-20 16:35:01 -0400
 Processing by UsersController#new as HTML
   Rendered users/new.html.erb within layouts/application (15.2ms)
 Completed 200 OK in 153ms (Views: 152.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 17:11:35 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GamesController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 16ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-10-20 17:11:35 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (16.3ms)
+WARNING on line 12 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+WARNING on line 14 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+WARNING on line 16 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+Completed 200 OK in 8880ms (Views: 8878.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-10-20 17:11:44 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-20 17:11:44 -0400
+
+
+Started GET "/assets/games.self-545eaec33bec664f202478b8dcb9021f4aa35a83d8d887a049ada17327b2e80c.js?body=1" for ::1 at 2015-10-20 17:11:44 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-10-20 17:11:44 -0400
+
+
+Started GET "/assets/sessions.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-20 17:11:44 -0400
+
+
+Started GET "/assets/users.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-20 17:11:44 -0400
+
+
+Started POST "/login" for ::1 at 2015-10-20 17:11:46 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KzkLrMPPrVmszSQJYuYWph/atI8SBped25gSM/xE6huMSp2MXj4pbRcFxvfD132VdZpLrxvUYAQ1bMMg8BNTbQ==", "session"=>{"email"=>"gvelezjr02@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "gvelezjr02@gmail.com"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 140ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 17:11:46 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 286ms (Views: 282.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 17:12:30 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 437ms (Views: 435.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/games.self-f2359ddf32f72412a8f8f3ccd755608025aeccddf03fabe31ab553048a04c6db.js?body=1" for ::1 at 2015-10-20 17:12:31 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 17:12:40 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 440ms (Views: 438.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/main.self-812b5b3ff5742bdf969b463ee7a055fb42716d99f4f424b6d42bbf87f2b00f30.css?body=1" for ::1 at 2015-10-20 17:12:41 -0400
+
+
+Started GET "/assets/games.self-4eed91f311c4c45ff9011ad5589894ef69fb15975f38439a86abf50677d9974d.css?body=1" for ::1 at 2015-10-20 17:12:41 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 17:12:41 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 17:12:41 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 17:12:41 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 17:12:41 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 17:12:41 -0400
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-10-20 17:12:41 -0400
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-10-20 17:12:41 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-10-20 17:12:41 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-10-20 17:12:41 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-10-20 17:12:41 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-10-20 17:12:41 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-10-20 17:12:41 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-10-20 17:12:41 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-10-20 17:12:41 -0400
+
+
+Started GET "/assets/application.self-ef88f69bc25d98c38c46f5f6c510218fc623ec5bb9074ab420e3bdb7f5290b19.css?body=1" for ::1 at 2015-10-20 17:12:41 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-10-20 17:12:41 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-10-20 17:12:41 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-10-20 17:12:41 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-10-20 17:12:41 -0400
+
+
+Started GET "/assets/games.self-e8154322d213de027d22b98b8f53149c07ba13c35c2a6f27278bb5e0d1faf60f.js?body=1" for ::1 at 2015-10-20 17:12:41 -0400
+
+
+Started GET "/assets/users.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-20 17:12:41 -0400
+
+
+Started GET "/assets/sessions.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-20 17:12:41 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-20 17:12:41 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 22:52:01 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 415ms (Views: 400.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/games.self-1e52ed2f65201d3ab7ca27ba9c16d982c623ef58c9d97a4c92a3496da9f8140e.js?body=1" for ::1 at 2015-10-20 22:52:02 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 22:52:05 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 190ms (Views: 189.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 22:56:20 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 672ms (Views: 656.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/games.self-11c6926e4edca0b0087ab5b877ff755fb6ab7483cf6d7cb6666cea73efaa6b0d.js?body=1" for ::1 at 2015-10-20 22:56:20 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 22:56:23 -0400
+Processing by GamesController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 234ms (Views: 232.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 23:21:48 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 469ms (Views: 467.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/games.self-9e02a2a5ddfe97fa1c2b36c76805bfb9fb119dc5dd9696b6db423d7e66d325d1.js?body=1" for ::1 at 2015-10-20 23:21:49 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 23:21:58 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 367ms (Views: 365.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/main.self-812b5b3ff5742bdf969b463ee7a055fb42716d99f4f424b6d42bbf87f2b00f30.css?body=1" for ::1 at 2015-10-20 23:21:58 -0400
+
+
+Started GET "/assets/games.self-4eed91f311c4c45ff9011ad5589894ef69fb15975f38439a86abf50677d9974d.css?body=1" for ::1 at 2015-10-20 23:21:58 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 23:21:58 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 23:21:58 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 23:21:58 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 23:21:58 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 23:21:59 -0400
+
+
+Started GET "/assets/application.self-ef88f69bc25d98c38c46f5f6c510218fc623ec5bb9074ab420e3bdb7f5290b19.css?body=1" for ::1 at 2015-10-20 23:21:59 -0400
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-10-20 23:21:59 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-10-20 23:21:59 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-10-20 23:21:59 -0400
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-10-20 23:21:59 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-10-20 23:21:59 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-10-20 23:21:59 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-10-20 23:21:59 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-10-20 23:21:59 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-10-20 23:21:59 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-10-20 23:21:59 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-10-20 23:21:59 -0400
+
+
+Started GET "/assets/games.self-a7ef112b2f4f94f45717c17d5768a63c5696dbcaebc124ac4b8f8df25bfb7d2c.js?body=1" for ::1 at 2015-10-20 23:21:59 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-10-20 23:21:59 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-10-20 23:21:59 -0400
+
+
+Started GET "/assets/sessions.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-20 23:21:59 -0400
+
+
+Started GET "/assets/users.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-20 23:21:59 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-20 23:21:59 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 23:22:40 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 401ms (Views: 399.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/main.self-812b5b3ff5742bdf969b463ee7a055fb42716d99f4f424b6d42bbf87f2b00f30.css?body=1" for ::1 at 2015-10-20 23:22:40 -0400
+
+
+Started GET "/assets/games.self-4eed91f311c4c45ff9011ad5589894ef69fb15975f38439a86abf50677d9974d.css?body=1" for ::1 at 2015-10-20 23:22:40 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 23:22:40 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 23:22:40 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 23:22:40 -0400
+
+
+Started GET "/assets/application.self-ef88f69bc25d98c38c46f5f6c510218fc623ec5bb9074ab420e3bdb7f5290b19.css?body=1" for ::1 at 2015-10-20 23:22:40 -0400
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-10-20 23:22:40 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-10-20 23:22:40 -0400
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-10-20 23:22:40 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 23:22:40 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 23:22:41 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-10-20 23:22:41 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-10-20 23:22:41 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-10-20 23:22:41 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-10-20 23:22:41 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-10-20 23:22:41 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-10-20 23:22:41 -0400
+
+
+Started GET "/assets/games.self-ca85c47e09eafff212db8b92bed3ce0aca4c3d771b34e18258e5340ab3dc493c.js?body=1" for ::1 at 2015-10-20 23:22:41 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-10-20 23:22:41 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-10-20 23:22:41 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-10-20 23:22:41 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-10-20 23:22:41 -0400
+
+
+Started GET "/assets/sessions.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-20 23:22:41 -0400
+
+
+Started GET "/assets/users.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-20 23:22:41 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-20 23:22:41 -0400
+
+
+Started GET "/" for ::1 at 2015-10-20 23:22:49 -0400
+Processing by GamesController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 235ms (Views: 233.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 23:24:48 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 357ms (Views: 355.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/main.self-812b5b3ff5742bdf969b463ee7a055fb42716d99f4f424b6d42bbf87f2b00f30.css?body=1" for ::1 at 2015-10-20 23:24:48 -0400
+
+
+Started GET "/assets/games.self-4eed91f311c4c45ff9011ad5589894ef69fb15975f38439a86abf50677d9974d.css?body=1" for ::1 at 2015-10-20 23:24:48 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 23:24:48 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 23:24:48 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 23:24:48 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 23:24:48 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 23:24:48 -0400
+
+
+Started GET "/assets/application.self-ef88f69bc25d98c38c46f5f6c510218fc623ec5bb9074ab420e3bdb7f5290b19.css?body=1" for ::1 at 2015-10-20 23:24:48 -0400
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-10-20 23:24:48 -0400
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-10-20 23:24:48 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-10-20 23:24:48 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-10-20 23:24:48 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-10-20 23:24:48 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-10-20 23:24:49 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-10-20 23:24:49 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-10-20 23:24:49 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-10-20 23:24:49 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-10-20 23:24:49 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-10-20 23:24:49 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-10-20 23:24:49 -0400
+
+
+Started GET "/assets/games.self-42b92c3b1afb555bc11f3c2cabd1c0b8f01f9859e32ffc291be06aa06c46241d.js?body=1" for ::1 at 2015-10-20 23:24:49 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-10-20 23:24:49 -0400
+
+
+Started GET "/assets/users.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-20 23:24:49 -0400
+
+
+Started GET "/assets/sessions.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-20 23:24:49 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-20 23:24:49 -0400
+
+
+Started GET "/.json" for ::1 at 2015-10-20 23:24:51 -0400
+
+ActionController::RoutingError (No route matches [GET] "/.json"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/gilbertovelez/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/gilbertovelez/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/gilbertovelez/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.8ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (36.3ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (97.1ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (229.2ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 23:27:43 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 220ms (Views: 203.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/games.self-4eed91f311c4c45ff9011ad5589894ef69fb15975f38439a86abf50677d9974d.css?body=1" for ::1 at 2015-10-20 23:27:44 -0400
+
+
+Started GET "/assets/main.self-812b5b3ff5742bdf969b463ee7a055fb42716d99f4f424b6d42bbf87f2b00f30.css?body=1" for ::1 at 2015-10-20 23:27:44 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 23:27:44 -0400
+
+
+Started GET "/assets/application.self-ef88f69bc25d98c38c46f5f6c510218fc623ec5bb9074ab420e3bdb7f5290b19.css?body=1" for ::1 at 2015-10-20 23:27:44 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 23:27:44 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 23:27:44 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 23:27:44 -0400
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-10-20 23:27:44 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 23:27:44 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-10-20 23:27:44 -0400
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-10-20 23:27:44 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-10-20 23:27:44 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-10-20 23:27:44 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-10-20 23:27:44 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-10-20 23:27:44 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-10-20 23:27:44 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-10-20 23:27:44 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-10-20 23:27:44 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-10-20 23:27:44 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-10-20 23:27:44 -0400
+
+
+Started GET "/assets/users.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-20 23:27:44 -0400
+
+
+Started GET "/assets/games.self-42b92c3b1afb555bc11f3c2cabd1c0b8f01f9859e32ffc291be06aa06c46241d.js?body=1" for ::1 at 2015-10-20 23:27:44 -0400
+
+
+Started GET "/assets/sessions.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-20 23:27:44 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-10-20 23:27:44 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-20 23:27:44 -0400
+
+
+Started GET "/.json" for ::1 at 2015-10-20 23:27:47 -0400
+
+ActionController::RoutingError (No route matches [GET] "/.json"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/gilbertovelez/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/gilbertovelez/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/gilbertovelez/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.2ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (34.6ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (89.0ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (199.7ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 23:28:21 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 224ms (Views: 209.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.self-ef88f69bc25d98c38c46f5f6c510218fc623ec5bb9074ab420e3bdb7f5290b19.css?body=1" for ::1 at 2015-10-20 23:28:21 -0400
+
+
+Started GET "/assets/main.self-812b5b3ff5742bdf969b463ee7a055fb42716d99f4f424b6d42bbf87f2b00f30.css?body=1" for ::1 at 2015-10-20 23:28:21 -0400
+
+
+Started GET "/assets/games.self-4eed91f311c4c45ff9011ad5589894ef69fb15975f38439a86abf50677d9974d.css?body=1" for ::1 at 2015-10-20 23:28:21 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 23:28:21 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 23:28:21 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 23:28:21 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 23:28:21 -0400
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-10-20 23:28:21 -0400
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-10-20 23:28:22 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-10-20 23:28:22 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-10-20 23:28:22 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 23:28:22 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-10-20 23:28:22 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-10-20 23:28:22 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-10-20 23:28:22 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-10-20 23:28:22 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-10-20 23:28:22 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-10-20 23:28:22 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-10-20 23:28:22 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-10-20 23:28:22 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-10-20 23:28:22 -0400
+
+
+Started GET "/assets/games.self-42b92c3b1afb555bc11f3c2cabd1c0b8f01f9859e32ffc291be06aa06c46241d.js?body=1" for ::1 at 2015-10-20 23:28:22 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-20 23:28:22 -0400
+
+
+Started GET "/assets/sessions.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-20 23:28:22 -0400
+
+
+Started GET "/assets/users.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-20 23:28:22 -0400
+
+
+Started GET "/.json" for ::1 at 2015-10-20 23:28:24 -0400
+
+ActionController::RoutingError (No route matches [GET] "/.json"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/gilbertovelez/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/gilbertovelez/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/gilbertovelez/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.8ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (33.1ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (92.4ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/gilbertovelez/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (208.6ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 23:28:47 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 426ms (Views: 424.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/main.self-812b5b3ff5742bdf969b463ee7a055fb42716d99f4f424b6d42bbf87f2b00f30.css?body=1" for ::1 at 2015-10-20 23:28:47 -0400
+
+
+Started GET "/assets/games.self-4eed91f311c4c45ff9011ad5589894ef69fb15975f38439a86abf50677d9974d.css?body=1" for ::1 at 2015-10-20 23:28:47 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 23:28:47 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 23:28:47 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 23:28:47 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 23:28:47 -0400
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-10-20 23:28:47 -0400
+
+
+Started GET "/assets/application.self-ef88f69bc25d98c38c46f5f6c510218fc623ec5bb9074ab420e3bdb7f5290b19.css?body=1" for ::1 at 2015-10-20 23:28:47 -0400
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-10-20 23:28:47 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-10-20 23:28:47 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 23:28:47 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-10-20 23:28:47 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-10-20 23:28:47 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-10-20 23:28:47 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-10-20 23:28:48 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-10-20 23:28:48 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-10-20 23:28:48 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-10-20 23:28:48 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-10-20 23:28:48 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-10-20 23:28:48 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-10-20 23:28:48 -0400
+
+
+Started GET "/assets/sessions.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-20 23:28:48 -0400
+
+
+Started GET "/assets/games.self-aa900445b2c856479df3d926e1bd92e4c7feb161d40170471c5298107b959597.js?body=1" for ::1 at 2015-10-20 23:28:48 -0400
+
+
+Started GET "/assets/users.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-20 23:28:48 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-20 23:28:48 -0400
+
+
+Started GET "/index.json" for ::1 at 2015-10-20 23:28:50 -0400
+Processing by GamesController#index as JSON
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 23:30:16 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 458ms (Views: 444.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 23:30:17 -0400
+
+
+Started GET "/assets/games.self-4eed91f311c4c45ff9011ad5589894ef69fb15975f38439a86abf50677d9974d.css?body=1" for ::1 at 2015-10-20 23:30:17 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 23:30:17 -0400
+
+
+Started GET "/assets/main.self-812b5b3ff5742bdf969b463ee7a055fb42716d99f4f424b6d42bbf87f2b00f30.css?body=1" for ::1 at 2015-10-20 23:30:17 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 23:30:17 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 23:30:17 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 23:30:17 -0400
+
+
+Started GET "/assets/application.self-ef88f69bc25d98c38c46f5f6c510218fc623ec5bb9074ab420e3bdb7f5290b19.css?body=1" for ::1 at 2015-10-20 23:30:17 -0400
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-10-20 23:30:17 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-10-20 23:30:17 -0400
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-10-20 23:30:17 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-10-20 23:30:17 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-10-20 23:30:17 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-10-20 23:30:17 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-10-20 23:30:17 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-10-20 23:30:17 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-10-20 23:30:17 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-10-20 23:30:17 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-10-20 23:30:17 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-10-20 23:30:17 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-10-20 23:30:17 -0400
+
+
+Started GET "/assets/games.self-87f1f3bbd4af0c75e3c5165e77fbaded6fd0cfc31603dcde161b2550e6c98bdc.js?body=1" for ::1 at 2015-10-20 23:30:18 -0400
+
+
+Started GET "/assets/sessions.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-20 23:30:18 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-20 23:30:18 -0400
+
+
+Started GET "/assets/users.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-20 23:30:18 -0400
+
+
+Started GET "/index.json" for ::1 at 2015-10-20 23:30:20 -0400
+Processing by GamesController#index as JSON
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/index.json" for ::1 at 2015-10-20 23:30:22 -0400
+Processing by GamesController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 23:31:15 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+WARNING on line 12 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+WARNING on line 17 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+Completed 200 OK in 534ms (Views: 532.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/main.self-812b5b3ff5742bdf969b463ee7a055fb42716d99f4f424b6d42bbf87f2b00f30.css?body=1" for ::1 at 2015-10-20 23:31:16 -0400
+
+
+Started GET "/assets/games.self-98488d7b20ea97ff365875b021baf56273e488714e1202b5493dd3a6515ea478.css?body=1" for ::1 at 2015-10-20 23:31:16 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 23:31:16 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 23:31:16 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 23:31:16 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 23:31:16 -0400
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-10-20 23:31:16 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-10-20 23:31:16 -0400
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-10-20 23:31:16 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-10-20 23:31:16 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 23:31:16 -0400
+
+
+Started GET "/assets/application.self-ef88f69bc25d98c38c46f5f6c510218fc623ec5bb9074ab420e3bdb7f5290b19.css?body=1" for ::1 at 2015-10-20 23:31:16 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-10-20 23:31:16 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-10-20 23:31:16 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-10-20 23:31:16 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-10-20 23:31:16 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-10-20 23:31:16 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-10-20 23:31:16 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-10-20 23:31:16 -0400
+
+
+Started GET "/assets/games.self-9ba9e7428f7222226ed77c511c61137fee55d8570b553ec5e35f706508816aeb.js?body=1" for ::1 at 2015-10-20 23:31:16 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-10-20 23:31:16 -0400
+
+
+Started GET "/assets/sessions.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-20 23:31:16 -0400
+
+
+Started GET "/assets/users.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-20 23:31:16 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-10-20 23:31:16 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-20 23:31:16 -0400
+
+
+Started GET "/index.json" for ::1 at 2015-10-20 23:31:19 -0400
+Processing by GamesController#index as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/index.json" for ::1 at 2015-10-20 23:31:21 -0400
+Processing by GamesController#index as JSON
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 23:31:25 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 256ms (Views: 252.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/index.json" for ::1 at 2015-10-20 23:31:56 -0400
+Processing by GamesController#index as JSON
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/index.json" for ::1 at 2015-10-20 23:32:07 -0400
+Processing by GamesController#index as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 23:32:17 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 227ms (Views: 225.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 23:57:07 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 953ms (Views: 936.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/main.self-812b5b3ff5742bdf969b463ee7a055fb42716d99f4f424b6d42bbf87f2b00f30.css?body=1" for ::1 at 2015-10-20 23:57:08 -0400
+
+
+Started GET "/assets/games.self-98488d7b20ea97ff365875b021baf56273e488714e1202b5493dd3a6515ea478.css?body=1" for ::1 at 2015-10-20 23:57:09 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 23:57:09 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 23:57:09 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 23:57:09 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 23:57:09 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-10-20 23:57:09 -0400
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-10-20 23:57:09 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 23:57:09 -0400
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-10-20 23:57:09 -0400
+
+
+Started GET "/assets/application.self-ef88f69bc25d98c38c46f5f6c510218fc623ec5bb9074ab420e3bdb7f5290b19.css?body=1" for ::1 at 2015-10-20 23:57:09 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-10-20 23:57:09 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-10-20 23:57:09 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-10-20 23:57:09 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-10-20 23:57:09 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-10-20 23:57:09 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-10-20 23:57:09 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-10-20 23:57:09 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-10-20 23:57:09 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-10-20 23:57:09 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-10-20 23:57:09 -0400
+
+
+Started GET "/assets/users.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-20 23:57:09 -0400
+
+
+Started GET "/assets/sessions.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-20 23:57:09 -0400
+
+
+Started GET "/assets/games.self-74e3533bde4e308fb3104110c805b1d9a9de891afef0d3b6a52fa57d76db0466.js?body=1" for ::1 at 2015-10-20 23:57:09 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-20 23:57:09 -0400
+
+
+Started GET "/index.json" for ::1 at 2015-10-20 23:57:12 -0400
+Processing by GamesController#index as JSON
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/index.json" for ::1 at 2015-10-20 23:57:15 -0400
+Processing by GamesController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/index.json" for ::1 at 2015-10-20 23:57:23 -0400
+Processing by GamesController#index as JSON
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 23:57:31 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 477ms (Views: 475.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/games.self-98488d7b20ea97ff365875b021baf56273e488714e1202b5493dd3a6515ea478.css?body=1" for ::1 at 2015-10-20 23:57:32 -0400
+
+
+Started GET "/assets/main.self-812b5b3ff5742bdf969b463ee7a055fb42716d99f4f424b6d42bbf87f2b00f30.css?body=1" for ::1 at 2015-10-20 23:57:32 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 23:57:32 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 23:57:32 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 23:57:32 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 23:57:32 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 23:57:32 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-10-20 23:57:32 -0400
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-10-20 23:57:32 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-10-20 23:57:32 -0400
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-10-20 23:57:32 -0400
+
+
+Started GET "/assets/application.self-ef88f69bc25d98c38c46f5f6c510218fc623ec5bb9074ab420e3bdb7f5290b19.css?body=1" for ::1 at 2015-10-20 23:57:32 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-10-20 23:57:32 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-10-20 23:57:32 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-10-20 23:57:32 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-10-20 23:57:32 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-10-20 23:57:32 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-10-20 23:57:32 -0400
+
+
+Started GET "/assets/games.self-093bcbf7557625f534e35afdf6165b075be78530b8fe7f2672843d138a7e10ce.js?body=1" for ::1 at 2015-10-20 23:57:32 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-10-20 23:57:32 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-10-20 23:57:32 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-10-20 23:57:32 -0400
+
+
+Started GET "/assets/sessions.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-20 23:57:32 -0400
+
+
+Started GET "/assets/users.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-20 23:57:32 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-20 23:57:32 -0400
+
+
+Started GET "/index.json" for ::1 at 2015-10-20 23:57:34 -0400
+Processing by GamesController#index as JSON
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 23:58:52 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 414ms (Views: 413.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/main.self-812b5b3ff5742bdf969b463ee7a055fb42716d99f4f424b6d42bbf87f2b00f30.css?body=1" for ::1 at 2015-10-20 23:58:53 -0400
+
+
+Started GET "/assets/games.self-98488d7b20ea97ff365875b021baf56273e488714e1202b5493dd3a6515ea478.css?body=1" for ::1 at 2015-10-20 23:58:53 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 23:58:53 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 23:58:53 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 23:58:53 -0400
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-10-20 23:58:53 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-10-20 23:58:53 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 23:58:53 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 23:58:53 -0400
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-10-20 23:58:53 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-10-20 23:58:53 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-10-20 23:58:53 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-10-20 23:58:53 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-10-20 23:58:53 -0400
+
+
+Started GET "/assets/application.self-ef88f69bc25d98c38c46f5f6c510218fc623ec5bb9074ab420e3bdb7f5290b19.css?body=1" for ::1 at 2015-10-20 23:58:53 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-10-20 23:58:53 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-10-20 23:58:53 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-10-20 23:58:53 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-10-20 23:58:53 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-10-20 23:58:53 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-20 23:58:53 -0400
+
+
+Started GET "/assets/games.self-1c1c965becfe5129bed6f7c1e9a6da9223424f70fad18b5340a8792d2dff653d.js?body=1" for ::1 at 2015-10-20 23:58:53 -0400
+
+
+Started GET "/assets/users.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-20 23:58:53 -0400
+
+
+Started GET "/assets/sessions.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-20 23:58:53 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-10-20 23:58:53 -0400
+
+
+Started GET "/index.json" for ::1 at 2015-10-20 23:58:55 -0400
+Processing by GamesController#index as JSON
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 23:59:05 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 436ms (Views: 434.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/main.self-812b5b3ff5742bdf969b463ee7a055fb42716d99f4f424b6d42bbf87f2b00f30.css?body=1" for ::1 at 2015-10-20 23:59:06 -0400
+
+
+Started GET "/assets/games.self-98488d7b20ea97ff365875b021baf56273e488714e1202b5493dd3a6515ea478.css?body=1" for ::1 at 2015-10-20 23:59:06 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 23:59:06 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 23:59:06 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 23:59:06 -0400
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-10-20 23:59:06 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 23:59:06 -0400
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-10-20 23:59:06 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-10-20 23:59:06 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-10-20 23:59:06 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 23:59:06 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-10-20 23:59:06 -0400
+
+
+Started GET "/assets/application.self-ef88f69bc25d98c38c46f5f6c510218fc623ec5bb9074ab420e3bdb7f5290b19.css?body=1" for ::1 at 2015-10-20 23:59:06 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-10-20 23:59:06 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-10-20 23:59:06 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-10-20 23:59:06 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-10-20 23:59:06 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-10-20 23:59:06 -0400
+
+
+Started GET "/assets/games.self-122f80e75467f1c4f229de7e2af4dd17da2a0fd67e83240ab60761c31ad06f5f.js?body=1" for ::1 at 2015-10-20 23:59:06 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-10-20 23:59:06 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-10-20 23:59:06 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-10-20 23:59:06 -0400
+
+
+Started GET "/assets/sessions.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-20 23:59:06 -0400
+
+
+Started GET "/assets/users.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-20 23:59:06 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-20 23:59:06 -0400
+
+
+Started GET "/index.json" for ::1 at 2015-10-20 23:59:09 -0400
+Processing by GamesController#index as JSON
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 23:59:32 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 400ms (Views: 398.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/main.self-812b5b3ff5742bdf969b463ee7a055fb42716d99f4f424b6d42bbf87f2b00f30.css?body=1" for ::1 at 2015-10-20 23:59:33 -0400
+
+
+Started GET "/assets/games.self-98488d7b20ea97ff365875b021baf56273e488714e1202b5493dd3a6515ea478.css?body=1" for ::1 at 2015-10-20 23:59:33 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 23:59:33 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 23:59:33 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 23:59:33 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-10-20 23:59:33 -0400
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-10-20 23:59:33 -0400
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-10-20 23:59:33 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 23:59:33 -0400
+
+
+Started GET "/assets/application.self-ef88f69bc25d98c38c46f5f6c510218fc623ec5bb9074ab420e3bdb7f5290b19.css?body=1" for ::1 at 2015-10-20 23:59:33 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 23:59:33 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-10-20 23:59:33 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-10-20 23:59:33 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-10-20 23:59:33 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-10-20 23:59:33 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-10-20 23:59:33 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-10-20 23:59:33 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-10-20 23:59:33 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-10-20 23:59:33 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-10-20 23:59:33 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-10-20 23:59:33 -0400
+
+
+Started GET "/assets/games.self-6d91ce40d1e8b2a47dce21b16660aaef27f44c9d49a9489beeaa22157970ab1f.js?body=1" for ::1 at 2015-10-20 23:59:33 -0400
+
+
+Started GET "/assets/sessions.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-20 23:59:33 -0400
+
+
+Started GET "/assets/users.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-20 23:59:33 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-20 23:59:33 -0400
+
+
+Started GET "/index.json" for ::1 at 2015-10-20 23:59:36 -0400
+Processing by GamesController#index as JSON
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-10-20 23:59:49 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 380ms (Views: 378.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-ef88f69bc25d98c38c46f5f6c510218fc623ec5bb9074ab420e3bdb7f5290b19.css?body=1" for ::1 at 2015-10-20 23:59:50 -0400
+
+
+Started GET "/assets/main.self-812b5b3ff5742bdf969b463ee7a055fb42716d99f4f424b6d42bbf87f2b00f30.css?body=1" for ::1 at 2015-10-20 23:59:50 -0400
+
+
+Started GET "/assets/games.self-98488d7b20ea97ff365875b021baf56273e488714e1202b5493dd3a6515ea478.css?body=1" for ::1 at 2015-10-20 23:59:50 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 23:59:50 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-20 23:59:50 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-20 23:59:50 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-20 23:59:50 -0400
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-10-20 23:59:50 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-10-20 23:59:50 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-10-20 23:59:50 -0400
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-10-20 23:59:50 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-10-20 23:59:50 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-10-20 23:59:50 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-20 23:59:50 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-10-20 23:59:50 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-10-20 23:59:50 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-10-20 23:59:50 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-10-20 23:59:50 -0400
+
+
+Started GET "/assets/games.self-85fe5503ab248cc374115ca1a1db5a53cae4fb6650a418505716d3957cf85770.js?body=1" for ::1 at 2015-10-20 23:59:50 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-10-20 23:59:50 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-10-20 23:59:50 -0400
+
+
+Started GET "/assets/sessions.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-20 23:59:50 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-10-20 23:59:50 -0400
+
+
+Started GET "/assets/users.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-20 23:59:50 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-20 23:59:50 -0400
+
+
+Started GET "/index.json" for ::1 at 2015-10-20 23:59:52 -0400
+Processing by GamesController#index as JSON
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/index.json" for ::1 at 2015-10-20 23:59:55 -0400
+Processing by GamesController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-10-21 00:06:32 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 414ms (Views: 412.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/games.self-28c07e73342197bdb63c92f19b05a490357ad618d8f44eb756a26ada8d2d467e.js?body=1" for ::1 at 2015-10-21 00:06:32 -0400
+
+
+Started GET "/" for ::1 at 2015-10-21 00:07:50 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+WARNING on line 14 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+WARNING on line 19 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+Completed 200 OK in 386ms (Views: 384.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/games.self-b36b2af08a7c5b19bdaba2e0f9ddbabdfb58d6ded9181f35b3ae2c45963b62aa.css?body=1" for ::1 at 2015-10-21 00:07:50 -0400
+
+
+Started GET "/" for ::1 at 2015-10-21 00:09:38 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+WARNING on line 15 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+WARNING on line 20 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+Completed 200 OK in 465ms (Views: 463.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/games.self-2736de116450cafb2b47188fd115d19f7a0bfeb627d9d3a551a8cc8b6b12e47d.css?body=1" for ::1 at 2015-10-21 00:09:39 -0400
+
+
+Started GET "/" for ::1 at 2015-10-21 00:10:37 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+WARNING on line 15 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+Completed 200 OK in 342ms (Views: 340.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/games.self-85cd3a978b3781888a9fb0e0ca7c69b8eca37aafbd4e990179ceb34c882af076.css?body=1" for ::1 at 2015-10-21 00:10:37 -0400
+
+
+Started GET "/" for ::1 at 2015-10-21 00:10:49 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.3ms)
+WARNING on line 15 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+Completed 200 OK in 314ms (Views: 312.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/games.self-0dadeb9b311ac380dde582c205c5a87c8351121a1104b68fd9cd45d367315ed1.css?body=1" for ::1 at 2015-10-21 00:10:49 -0400
+
+
+Started GET "/" for ::1 at 2015-10-21 00:10:59 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.2ms)
+WARNING on line 15 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+Completed 200 OK in 334ms (Views: 331.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/games.self-65a937939faa992d4218b6185f3ef6e98a8ff59870cbbc4f39b7e266936fd499.css?body=1" for ::1 at 2015-10-21 00:11:00 -0400
+
+
+Started GET "/" for ::1 at 2015-10-21 00:11:07 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+WARNING on line 15 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+Completed 200 OK in 308ms (Views: 306.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/games.self-ec8d59427d94b20c3e3e645d5957152cbdcbc98e4a74362112a9e33ea9df3a10.css?body=1" for ::1 at 2015-10-21 00:11:07 -0400
+
+
+Started GET "/" for ::1 at 2015-10-21 00:11:19 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+WARNING on line 15 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+Completed 200 OK in 340ms (Views: 338.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/games.self-878bc1dd8e7cd29dff8ca87bcc81ccdc700541d723277afc0270458af846e099.css?body=1" for ::1 at 2015-10-21 00:11:20 -0400
+
+
+Started GET "/" for ::1 at 2015-10-21 00:11:27 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+WARNING on line 15 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+Completed 200 OK in 321ms (Views: 319.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/games.self-2282cf1bf6e6b2372a6ddc365f0a4724c43fd70431ffb091a8572e7863c8c748.css?body=1" for ::1 at 2015-10-21 00:11:27 -0400
+
+
+Started GET "/" for ::1 at 2015-10-21 00:11:33 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+WARNING on line 15 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+Completed 200 OK in 324ms (Views: 322.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/games.self-6ca66913f3e6c2819c789bce81848b76b5166c9cd1ce22958c112074f37a11a8.css?body=1" for ::1 at 2015-10-21 00:11:33 -0400
+
+
+Started GET "/" for ::1 at 2015-10-21 00:11:39 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+WARNING on line 15 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+Completed 200 OK in 317ms (Views: 315.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/games.self-92469c7041adb247678da6794c7e37d9d66075abee50b571fa0972f78770b43a.css?body=1" for ::1 at 2015-10-21 00:11:39 -0400
+
+
+Started GET "/" for ::1 at 2015-10-21 00:11:53 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 232ms (Views: 231.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-10-21 00:12:08 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+WARNING on line 15 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+Completed 200 OK in 312ms (Views: 309.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/games.self-c92bac538df1f7b5b2a6a9163e23481469044389297b3b17c9dbe65a7f1319fe.css?body=1" for ::1 at 2015-10-21 00:12:09 -0400
+
+
+Started GET "/" for ::1 at 2015-10-21 00:12:47 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+WARNING on line 15 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+Completed 200 OK in 318ms (Views: 316.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/games.self-d05ba35b57c3ad7fc450b336cdbb6675807a2bfdabf60c9a82b1042917683063.css?body=1" for ::1 at 2015-10-21 00:12:48 -0400
+
+
+Started GET "/" for ::1 at 2015-10-21 00:12:59 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+WARNING on line 15 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+WARNING on line 20 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+Completed 200 OK in 333ms (Views: 330.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/games.self-2629056145b06da8d45bd2b25d18a98c6a9bc0b34511c4e6b35e27f37fb5ed8f.css?body=1" for ::1 at 2015-10-21 00:12:59 -0400
+
+
+Started GET "/" for ::1 at 2015-10-21 00:14:26 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+WARNING on line 15 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+Completed 200 OK in 466ms (Views: 464.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/games.self-5766a672572f1e3d2ed87937a903f5157885289a02bdc564d12c56a793bf38bd.css?body=1" for ::1 at 2015-10-21 00:14:27 -0400
+
+
+Started GET "/index.json" for ::1 at 2015-10-21 00:14:31 -0400
+Processing by GamesController#index as JSON
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/index.json" for ::1 at 2015-10-21 00:14:34 -0400
+Processing by GamesController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-10-21 00:15:18 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+WARNING on line 16 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+WARNING on line 21 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+Completed 200 OK in 415ms (Views: 413.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/main.self-812b5b3ff5742bdf969b463ee7a055fb42716d99f4f424b6d42bbf87f2b00f30.css?body=1" for ::1 at 2015-10-21 00:15:19 -0400
+
+
+Started GET "/assets/games.self-91b2c50ed92c888453f7ca0072ad3f5ff6513d27c9d96958aeb053963781d627.css?body=1" for ::1 at 2015-10-21 00:15:19 -0400
+
+
+Started GET "/assets/application.self-ef88f69bc25d98c38c46f5f6c510218fc623ec5bb9074ab420e3bdb7f5290b19.css?body=1" for ::1 at 2015-10-21 00:15:19 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-21 00:15:19 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-21 00:15:19 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-21 00:15:19 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-21 00:15:19 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-10-21 00:15:19 -0400
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-10-21 00:15:19 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-10-21 00:15:19 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-10-21 00:15:19 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-10-21 00:15:19 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-10-21 00:15:19 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-10-21 00:15:19 -0400
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-10-21 00:15:19 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-10-21 00:15:19 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-21 00:15:19 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-10-21 00:15:19 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-10-21 00:15:19 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-10-21 00:15:19 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-10-21 00:15:19 -0400
+
+
+Started GET "/assets/games.self-28c07e73342197bdb63c92f19b05a490357ad618d8f44eb756a26ada8d2d467e.js?body=1" for ::1 at 2015-10-21 00:15:19 -0400
+
+
+Started GET "/assets/sessions.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-21 00:15:19 -0400
+
+
+Started GET "/assets/users.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-21 00:15:19 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-21 00:15:19 -0400
+
+
+Started GET "/index.json" for ::1 at 2015-10-21 09:17:12 -0400
+Processing by GamesController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index.json" for ::1 at 2015-10-21 09:17:16 -0400
+Processing by GamesController#index as JSON
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/index.json" for ::1 at 2015-10-21 09:17:19 -0400
+Processing by GamesController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-10-21 10:55:53 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (1.2ms)
+WARNING on line 16 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+WARNING on line 21 of /Users/gilbertovelez/Desktop/3_week_game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+Completed 200 OK in 791ms (Views: 788.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/games.self-2952436c89d6d0c7dbbd3eb9121442314f377c6c45c5902d4257bcfb5de1ed1c.js?body=1" for ::1 at 2015-10-21 10:55:54 -0400
+
+
+Started GET "/assets/games.self-ed1777746a31dbf76fd230188f433663810e541d56c5bac7c923cdfd807d8dc7.css?body=1" for ::1 at 2015-10-21 10:55:54 -0400
+
+
+Started GET "/index.json" for ::1 at 2015-10-21 10:55:56 -0400
+Processing by GamesController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/index.json" for ::1 at 2015-10-21 10:55:59 -0400
+Processing by GamesController#index as JSON
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/index.json" for ::1 at 2015-10-21 10:56:01 -0400
+Processing by GamesController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/index.json" for ::1 at 2015-10-21 10:56:03 -0400
+Processing by GamesController#index as JSON
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/index.json" for ::1 at 2015-10-21 10:56:05 -0400
+Processing by GamesController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/index.json" for ::1 at 2015-10-21 10:56:07 -0400
+Processing by GamesController#index as JSON
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/index.json" for ::1 at 2015-10-21 10:56:09 -0400
+Processing by GamesController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/index.json" for ::1 at 2015-10-21 10:56:11 -0400
+Processing by GamesController#index as JSON
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/index.json" for ::1 at 2015-10-21 10:56:15 -0400
+Processing by GamesController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-10-21 10:56:16 -0400
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 221ms (Views: 219.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-10-21 10:59:21 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered games/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 1174ms (Views: 1102.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/main.self-812b5b3ff5742bdf969b463ee7a055fb42716d99f4f424b6d42bbf87f2b00f30.css?body=1" for ::1 at 2015-10-21 10:59:23 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-21 10:59:23 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-21 10:59:23 -0400
+
+
+Started GET "/assets/games.self-ed1777746a31dbf76fd230188f433663810e541d56c5bac7c923cdfd807d8dc7.css?body=1" for ::1 at 2015-10-21 10:59:23 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-21 10:59:23 -0400
+
+
+Started GET "/assets/application.self-ef88f69bc25d98c38c46f5f6c510218fc623ec5bb9074ab420e3bdb7f5290b19.css?body=1" for ::1 at 2015-10-21 10:59:23 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-21 10:59:23 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-21 10:59:23 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-10-21 10:59:23 -0400
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-10-21 10:59:23 -0400
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-10-21 10:59:23 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-10-21 10:59:23 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-10-21 10:59:23 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-10-21 10:59:23 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-10-21 10:59:23 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-10-21 10:59:23 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-10-21 10:59:23 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-10-21 10:59:23 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-10-21 10:59:23 -0400
+
+
+Started GET "/assets/users.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-21 10:59:23 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-10-21 10:59:23 -0400
+
+
+Started GET "/assets/games.self-8c9250f617df9c659415f07bd61ab13232cce753b74e341ab0f554ae70753327.js?body=1" for ::1 at 2015-10-21 10:59:23 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-10-21 10:59:23 -0400
+
+
+Started GET "/assets/sessions.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for ::1 at 2015-10-21 10:59:23 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-21 10:59:23 -0400
+
+
+Started GET "/index.json" for ::1 at 2015-10-21 10:59:30 -0400
+Processing by GamesController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/index.json" for ::1 at 2015-10-21 10:59:43 -0400
+Processing by GamesController#index as JSON
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.2ms)
