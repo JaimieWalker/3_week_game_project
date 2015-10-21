@@ -8286,3 +8286,261 @@ Started GET "/index.json" for ::1 at 2015-10-21 10:59:43 -0400
 Processing by GamesController#index as JSON
   [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
 Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-10-21 17:58:06 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered games/index.html.erb within layouts/application (2.0ms)
+WARNING on line 16 of /Users/jaimiewalker/Development/Flatiron_Group_Project/Game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+WARNING on line 21 of /Users/jaimiewalker/Development/Flatiron_Group_Project/Game_project/app/assets/stylesheets/games.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+Completed 200 OK in 5729ms (Views: 5691.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/login" for 192.168.2.2 at 2015-10-21 18:04:33 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 612ms (Views: 601.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main.self-7657ce7c8fe6646ae8ca3a34fcd1c3433a778b9981d1a1898fe62683b765f10a.css?body=1" for 192.168.2.2 at 2015-10-21 18:04:34 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-ef88f69bc25d98c38c46f5f6c510218fc623ec5bb9074ab420e3bdb7f5290b19.css?body=1" for 192.168.2.2 at 2015-10-21 18:04:34 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.168.2.2 at 2015-10-21 18:04:34 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/games.self-acffbfcdf882d9283774cc0264ac10eba8fd42352a2985d6817fd1a969abf72c.css?body=1" for 192.168.2.2 at 2015-10-21 18:04:34 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.168.2.2 at 2015-10-21 18:04:34 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 192.168.2.2 at 2015-10-21 18:04:34 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 192.168.2.2 at 2015-10-21 18:04:34 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 192.168.2.2 at 2015-10-21 18:04:34 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 192.168.2.2 at 2015-10-21 18:04:34 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 192.168.2.2 at 2015-10-21 18:04:34 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 192.168.2.2 at 2015-10-21 18:04:34 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 192.168.2.2 at 2015-10-21 18:04:34 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 192.168.2.2 at 2015-10-21 18:04:34 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 192.168.2.2 at 2015-10-21 18:04:34 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 192.168.2.2 at 2015-10-21 18:04:34 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 192.168.2.2 at 2015-10-21 18:04:34 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 192.168.2.2 at 2015-10-21 18:04:34 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 192.168.2.2 at 2015-10-21 18:04:34 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 192.168.2.2 at 2015-10-21 18:04:34 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 192.168.2.2 at 2015-10-21 18:04:34 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 192.168.2.2 at 2015-10-21 18:04:34 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/games.self-8c9250f617df9c659415f07bd61ab13232cce753b74e341ab0f554ae70753327.js?body=1" for 192.168.2.2 at 2015-10-21 18:04:34 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for 192.168.2.2 at 2015-10-21 18:04:34 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for 192.168.2.2 at 2015-10-21 18:04:34 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 192.168.2.2 at 2015-10-21 18:04:34 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/signup" for 192.168.2.2 at 2015-10-21 18:04:39 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 184ms (Views: 170.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 192.168.2.2 at 2015-10-21 18:04:55 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A3vljKdGti5Ph6hOSJIOwTuEt5ye5cc78c2dXYM/wE9P9U/0Fe2Z2lu4z2+Pp6PEsT8n2nZ5jawBJ7rVhfTotw==", "user"=>{"first_name"=>"Gilberto", "last_name"=>"Velez", "email"=>"gvelezjr02@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'gvelezjr02@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["first_name", "Gilberto"], ["last_name", "Velez"], ["email", "gvelezjr02@gmail.com"], ["password_digest", "$2a$10$dX9/pLqm8jBewqNOiF/wAOuFNA0PfqFgeW4i4zIdE0HWutHKpVT62"], ["created_at", "2015-10-21 22:04:55.627106"], ["updated_at", "2015-10-21 22:04:55.627106"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://192.168.2.169:8000/
+Completed 302 Found in 117ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/" for 192.168.2.2 at 2015-10-21 18:04:55 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered games/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 171ms (Views: 162.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-21 18:05:22 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered games/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 159ms (Views: 157.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/main.self-7657ce7c8fe6646ae8ca3a34fcd1c3433a778b9981d1a1898fe62683b765f10a.css?body=1" for 127.0.0.1 at 2015-10-21 18:05:23 -0400
+
+
+Started GET "/assets/games.self-acffbfcdf882d9283774cc0264ac10eba8fd42352a2985d6817fd1a969abf72c.css?body=1" for 127.0.0.1 at 2015-10-21 18:05:23 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-21 18:05:23 -0400
+
+
+Started GET "/assets/application.self-ef88f69bc25d98c38c46f5f6c510218fc623ec5bb9074ab420e3bdb7f5290b19.css?body=1" for 127.0.0.1 at 2015-10-21 18:05:23 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-21 18:05:23 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-10-21 18:05:23 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-10-21 18:05:23 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-10-21 18:05:23 -0400
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2015-10-21 18:05:23 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 127.0.0.1 at 2015-10-21 18:05:23 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2015-10-21 18:05:23 -0400
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 127.0.0.1 at 2015-10-21 18:05:23 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 127.0.0.1 at 2015-10-21 18:05:23 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 127.0.0.1 at 2015-10-21 18:05:23 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2015-10-21 18:05:23 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 127.0.0.1 at 2015-10-21 18:05:23 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2015-10-21 18:05:23 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 127.0.0.1 at 2015-10-21 18:05:23 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 127.0.0.1 at 2015-10-21 18:05:23 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 127.0.0.1 at 2015-10-21 18:05:23 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2015-10-21 18:05:23 -0400
+
+
+Started GET "/assets/games.self-8c9250f617df9c659415f07bd61ab13232cce753b74e341ab0f554ae70753327.js?body=1" for 127.0.0.1 at 2015-10-21 18:05:23 -0400
+
+
+Started GET "/assets/sessions.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for 127.0.0.1 at 2015-10-21 18:05:23 -0400
+
+
+Started GET "/assets/users.self-e3c7375a1d84378182a153d2f4670ffb261611e462fcfefef2b5b2855f273461.js?body=1" for 127.0.0.1 at 2015-10-21 18:05:23 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-21 18:05:23 -0400
+
+
+Started GET "/index.json" for 192.168.2.2 at 2015-10-21 18:05:24 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GamesController#index as JSON
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/index.json" for 192.168.2.2 at 2015-10-21 18:05:26 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GamesController#index as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/index.json" for 127.0.0.1 at 2015-10-21 18:05:27 -0400
+Processing by GamesController#index as JSON
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/index.json" for 192.168.2.2 at 2015-10-21 18:05:28 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GamesController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
