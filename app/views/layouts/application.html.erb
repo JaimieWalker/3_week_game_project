@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
  <head>
@@ -6,6 +7,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
 <nav class="main">
+
+<%= stylesheet_link_tag('application', media:'all') %>
+<%= javascript_include_tag('application', media: 'all') %>
+
+<nav>
+
   <% if current_user %>
     <%= current_user.email %>
     <%= link_to "Log Out", logout_path,  method: :delete %>
@@ -14,5 +21,7 @@
       <%= link_to "Signup", signup_path %>
   <% end %>
 </nav>
-<%= yield %>
-</html>
+
+<div id="app-container">
+  <%= yield %>
+<div>
