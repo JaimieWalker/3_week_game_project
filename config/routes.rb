@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+   post '/index' => 'games#hit'
     get 'index' => 'games#index'
     root :to => 'games#index'
     get '/signup' => 'users#new'
