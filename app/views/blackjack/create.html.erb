@@ -44,7 +44,9 @@ h1 {text-align:center;}
 <% @cards.each do |card| %>
  <%= image_tag card.gsub("app/assets/images/", "") %>
  <% end %>
+ 
 <%= button_to "deal", action: "deal" %>
+
 <%#
 <%= button_to "deal", action: "start" %> 
 <button id="hit" type="button" onclick="alert('BOW!')">Hit Me!</button>
