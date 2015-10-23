@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration
     	t.string :email
     	t.string :password_digest
       t.belongs_to :room, index: true
+      t.integer :card_id
 
       t.timestamps null: false
     end

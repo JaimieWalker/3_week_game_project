@@ -1,0 +1,75 @@
+
+
+<% @x = rand(1..52) %>
+<% @i = rand(1..52) %>
+ <style>
+body {background-color:green;}
+h1 {text-align:center;}
+#hit {
+   position:absolute;
+    transition: .5s ease;
+    top: 75%;
+    left: 25%;
+  }
+   #stay{
+   position:absolute;
+    transition: .5s ease;
+    top: 75%;
+    left: 35%;
+  }
+  input {
+   position:absolute;
+    transition: .5s ease;
+    top: 75%;
+    left: 30%; 
+  }
+   <%='img.' + @x.to_s %>  {
+     position:absolute;
+    transition: .5s ease;
+    top: 60%;
+    left: 30%; 
+  }
+  <%='img.' + @i.to_s %> {
+
+     position:absolute;
+    transition: .5s ease;
+    top: 60%;
+    left: 35%; 
+  }
+
+</style>
+
+<h1>WELCOME TO BLACK JACK CENTRAL</h1>
+
+<% @cards.each do |card| %>
+ <%= image_tag card.gsub("app/assets/images/", "") %>
+ <% end %>
+<%= button_to "deal", action: "deal" %>
+<%#
+<%= button_to "deal", action: "start" %> 
+<button id="hit" type="button" onclick="alert('BOW!')">Hit Me!</button>
+<button  id= "stay" type="button" onclick="alert('BOOM!')">Stay</button>
+
+<%= image_tag @x.to_s + '.png' , class:  @x  %>
+<%= image_tag  @i.to_s + '.png' , class:  @i %>
+
+<script>
+<% if @deal.nil? %>
+  $("#hit").hide();
+  $("#stay").hide();
+    <% @b = "img." + @x.to_s %>
+    <% @a = "img." + @i.to_s %>
+  $("<%=@b%>").hide();
+  $("<%=@a%>").hide();
+  <% else %>
+  
+    $("#hit").show();
+    $("#stay").show();
+    $(("<%=@b%>")).show();
+    $("<%=@a%>").show();
+    $("input").hide();
+  <% end %>
+
+</script>
+
+
