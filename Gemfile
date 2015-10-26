@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+gem 'binding_of_caller'
+
+gem 'better_errors'
+
+gem 'pry-nav'
+
 gem 'paperclip'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
