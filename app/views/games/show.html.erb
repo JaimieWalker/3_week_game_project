@@ -1,0 +1,21 @@
+<div id="game-container">
+  <% @game.users.each do |user| %>
+    <%= user.first_name %> Is in da house!!!
+  <% end %>
+</div>
+
+
+<!-- <script>
+  $(function() {
+
+    // Leave Room on navigating away / exiting page
+    $(window).bind('beforeunload', function(e){
+      $.ajax({
+        url: "<%= user_game_path %>",
+        data: { id: <%= current_user.id %> },
+        type: "DELETE",
+        async: false
+      });
+    });
+  });
+</script> -->

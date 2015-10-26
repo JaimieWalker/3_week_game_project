@@ -1,0 +1,10 @@
+<% @games.each do |game| %>
+  <% game.destroy if game.users.length == 0 %>
+  <% if game.users.length < 4 && game.users.length > 0 %>
+    <%= link_to "#{game.name}", game_path(game.id) %><br>
+  <% elsif game.users.length > 3 %>
+    <%= game.name %> Is full at the moment!
+  <% end %>
+<% end %>
+
+<br><%= link_to "Make a Room", new_game_path %>
