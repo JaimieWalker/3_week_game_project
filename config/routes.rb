@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
-
-    get '/' => 'games#index'
-    root to: 'games#index'
+   post '/index' => 'games#hit'
+    get 'index' => 'games#index'
+    root :to => 'games#index'
     get '/signup' => 'users#new'
     get '/login' => 'sessions#new'
     post '/login' => 'sessions#create'
     delete '/logout' => 'sessions#destroy'
+    
     resources :users
     resources :games
     resources :user_games

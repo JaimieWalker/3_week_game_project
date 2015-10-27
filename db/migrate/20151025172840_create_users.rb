@@ -6,6 +6,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :user_name
       t.string :password_digest
       t.string :email
+      t.integer :dealer_id
+      
 
       t.timestamps null: false
     end

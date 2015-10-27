@@ -1,3 +1,4 @@
 class Gametype < ActiveRecord::Base
-  has_many :rooms 
+  has_many :games
+  has_many :users, through: :games 
 end

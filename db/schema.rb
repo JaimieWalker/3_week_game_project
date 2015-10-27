@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151026155058) do
+ActiveRecord::Schema.define(version: 20151027180534) do
 
   create_table "cards", force: :cascade do |t|
     t.string   "value"
@@ -19,7 +19,10 @@ ActiveRecord::Schema.define(version: 20151026155058) do
     t.boolean  "drawn",      default: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.integer  "user_id"
   end
+
+  add_index "cards", ["user_id"], name: "index_cards_on_user_id"
 
   create_table "game_cards", force: :cascade do |t|
     t.integer  "game_id"
@@ -32,6 +35,16 @@ ActiveRecord::Schema.define(version: 20151026155058) do
   add_index "game_cards", ["game_id"], name: "index_game_cards_on_game_id"
 
   create_table "games", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "gametype_id"
+    t.string   "winner"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "games", ["gametype_id"], name: "index_games_on_gametype_id"
+
+  create_table "gametypes", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -53,6 +66,7 @@ ActiveRecord::Schema.define(version: 20151026155058) do
     t.string   "user_name"
     t.string   "password_digest"
     t.string   "email"
+    t.integer  "dealer_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
