@@ -6,11 +6,12 @@
 
   <% current_user.draw_card(2) %>
   <% current_user.cards.each do |card| %>
-    <%= image_tag card.name.gsub("app/assets/images", "") %>
+    <%= image_tag card.name.gsub("app/assets/images/", "") %>
   <% end %>
   
-  
 </div>
+
+
 
 
 <!-- <script>
