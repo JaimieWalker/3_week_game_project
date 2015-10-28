@@ -6,7 +6,6 @@ class CreateCards < ActiveRecord::Migration
       t.string :suit
       t.boolean :drawn, default: false
       t.timestamps null: false
-      t.belongs_to :user, index: true
     end
   end
 end

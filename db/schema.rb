@@ -20,10 +20,7 @@ ActiveRecord::Schema.define(version: 20151028173442) do
     t.boolean  "drawn",      default: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
-    t.integer  "user_id"
   end
-
-  add_index "cards", ["user_id"], name: "index_cards_on_user_id"
 
   create_table "game_cards", force: :cascade do |t|
     t.integer  "game_id"
@@ -67,7 +64,6 @@ ActiveRecord::Schema.define(version: 20151028173442) do
     t.string   "user_name"
     t.string   "password_digest"
     t.string   "email"
-    t.integer  "card_id"
     t.integer  "game_id"
     t.boolean  "dealer"
     t.datetime "created_at",      null: false

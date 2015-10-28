@@ -6,8 +6,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :user_name
       t.string :password_digest
       t.string :email
-      
-      t.integer :card_id
+
       t.belongs_to :game, index: true
       t.boolean :dealer
       
