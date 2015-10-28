@@ -1,7 +1,15 @@
 <div id="game-container">
+
   <% @game.users.each do |user| %>
-    <%= user.first_name %> Is in da house!!!
+    <%= user.user_name %> Is in da house!!!
   <% end %>
+
+  <% current_user.draw_card(2) %>
+  <% current_user.cards.each do |card| %>
+    <%= image_tag card.name.gsub("app/assets/images", "") %>
+  <% end %>
+  
+  
 </div>
 
 

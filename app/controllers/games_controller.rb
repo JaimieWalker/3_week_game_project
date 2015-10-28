@@ -2,6 +2,7 @@ class GamesController < ApplicationController
   before_action :require_user, only: [:index, :new, :show]
   def index
     @games = Game.all
+    current_user.update_columns(game_id: nil)
   end
 
   def new
@@ -12,8 +13,8 @@ class GamesController < ApplicationController
     @game = Game.new(game_params)
     respond_to do |format|
       if @game.save
-        UserGame.create( user_id: current_user.id, game_id: @game.id )
-
+        # current_user.create( user_id: current_user.id, game_id: @game.id )
+        current_user.update_columns(game_id: @game.id)
         format.html { redirect_to @game, notice: "Game Room created!" }
         format.json { render :show, location: @game }
       else
@@ -25,26 +26,27 @@ class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
 
-    if !current_user.games.include?(@game)
-      if @game.users.length < 4
-        UserGame.create( user_id: current_user.id, game_id: @game.id )
-      else
-        respond_to do |format|
-          format.html { redirect_to games_path, notice: "Sorry! Room is full!" }
-        end
+    if @game.users.length < 4
+      # current_user.create( user_id: current_user.id, game_id: @game.id )
+      current_user.update_columns(game_id: @game.id)
+    else
+      respond_to do |format|
+        format.html { redirect_to games_path, notice: "Sorry! Room is full!" }
       end
     end
-
   end
 
   def destroy
     @game = Game.find(params[:id])
     @game.users.each do |user|
-      UserGame.where(user_id: user.id, game_id: @game.id ).destroy
+      # current_user.where(user_id: user.id, game_id: @game.id ).destroy
+      current_user.update_columns(game_id: nil)
     end
     @game.destroy
     redirect_to root_url
   end
+
+
 
   private
   def game_params

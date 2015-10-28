@@ -1,12 +1,19 @@
 class User < ActiveRecord::Base
   has_secure_password
   
-  has_many :user_games
-  has_many :games, through: :user_games
-  has_many :game_cards, through: :games
   belongs_to :game
-  has_many :cards, through: :game_cards
+  has_many :user_cards
+  has_many :cards, through: :user_cards
 
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true
+
+
+  def draw_card(n)
+    n.times do 
+      card = Card.draw
+      self.update(card_id: card.id)
+    end
+  end
+
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151027180534) do
+ActiveRecord::Schema.define(version: 20151028173442) do
 
   create_table "cards", force: :cascade do |t|
     t.string   "name"
@@ -51,15 +51,15 @@ ActiveRecord::Schema.define(version: 20151027180534) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_games", force: :cascade do |t|
+  create_table "user_cards", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "game_id"
+    t.integer  "card_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "user_games", ["game_id"], name: "index_user_games_on_game_id"
-  add_index "user_games", ["user_id"], name: "index_user_games_on_user_id"
+  add_index "user_cards", ["card_id"], name: "index_user_cards_on_card_id"
+  add_index "user_cards", ["user_id"], name: "index_user_cards_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
@@ -67,9 +67,13 @@ ActiveRecord::Schema.define(version: 20151027180534) do
     t.string   "user_name"
     t.string   "password_digest"
     t.string   "email"
-    t.integer  "dealer_id"
+    t.integer  "card_id"
+    t.integer  "game_id"
+    t.boolean  "dealer"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
+
+  add_index "users", ["game_id"], name: "index_users_on_game_id"
 
 end

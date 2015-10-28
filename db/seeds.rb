@@ -16,15 +16,21 @@ values = [
   "8",
   "9",
   "10",
-  "J",
-  "Q",
-  "K",
-  "A"
+  "jack",
+  "king",
+  "queen",
+  "ace"
 ]
 
 suits = [
-  "Hearts",
-  "Spades",
-  "Clubs",
-  "Diamonds"
+  "hearts",
+  "spades",
+  "clubs",
+  "diamonds"
 ]
+
+values.each do |value|
+  suits.each do |suit| 
+    Card.create( value: value, suit: suit )
+  end
+end

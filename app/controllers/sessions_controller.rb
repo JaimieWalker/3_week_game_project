@@ -12,7 +12,8 @@ class SessionsController < ApplicationController
 	end
 
 	def destroy
-      @user_game = UserGame.find_by_user_id(current_user.id)
+      # @user_game = UserGame.find_by_user_id(current_user.id)
+      current_user.update_columns(game_id: nil)
       @user_game.destroy
 
   	  session[:user_id] = nil
