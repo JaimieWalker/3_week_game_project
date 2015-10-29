@@ -12,8 +12,16 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.new(game_params)
+    #Creates a dealer automatically for that room
+    # binding.pry
+
+    
+
     respond_to do |format|
-      if @game.save
+      if @game.save 
+        @game.users << User.create_dealer
+        @game.users.last.update_columns(game_id: @game.id)
+        
         # current_user.create( user_id: current_user.id, game_id: @game.id )
         current_user.update_columns(game_id: @game.id)
         format.html { redirect_to @game, notice: "Game Room created!" }
@@ -49,14 +57,19 @@ class GamesController < ApplicationController
 
 
   def hit
-    current_user.draw_card(1)
-    @game = Game.find(params[:id])
+    
+    #draw a card unless the user has stayed
+    unless current_user.stay
+      current_user.draw_card(1)
+      @game = Game.find(params[:id])
+    end
     #Needs to check for a busted hand
     redirect_to @game
 
   end
 
   def stay
+    #Check if everyones stay is true. If so, then the dealer draws
     current_user.update_columns(stay: true)
     @game = Game.find(params[:id])
     #When you stay, the hit button should disappear
