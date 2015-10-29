@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
    post '/games/:id/hit' => 'games#hit', as: :hit_game
-    post 'games/:id/stay' => 'games#stay'
+    post 'games/:id/stay' => 'games#stay', as: :stay_game
     root :to => 'games#index'
     get '/signup' => 'users#new'
     get '/login' => 'sessions#new'
