@@ -9,6 +9,13 @@
   <% current_user.cards.each do |card| %>
     <%= image_tag card.name.gsub("app/assets/images/", "") %>
   <% end %>
+
+  <%= button_to [:hit, @game] do %>
+  HIT
+  <% end %>
+  <%= button_to [:stay, @game] do %>
+  
+  <% end %>
   
 </div>
 

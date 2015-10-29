@@ -48,6 +48,18 @@ class GamesController < ApplicationController
   end
 
 
+  def hit
+    current_user.draw_card(1)
+    @game = Game.find(params[:id])
+    redirect_to @game
+    
+  end
+
+def stay
+  
+end
+
+
 
   private
   def game_params

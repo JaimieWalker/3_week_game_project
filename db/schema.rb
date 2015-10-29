@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20151028173442) do
     t.string   "name"
     t.integer  "gametype_id"
     t.string   "winner"
+    t.boolean  "active"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

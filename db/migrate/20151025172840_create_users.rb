@@ -9,6 +9,8 @@ class CreateUsers < ActiveRecord::Migration
 
       t.belongs_to :game, index: true
       t.boolean :dealer
+      t.boolean :bust
+      t.boolean :stay
       
 
       t.timestamps null: false
