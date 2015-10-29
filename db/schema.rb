@@ -67,6 +67,8 @@ ActiveRecord::Schema.define(version: 20151028173442) do
     t.string   "email"
     t.integer  "game_id"
     t.boolean  "dealer"
+    t.boolean  "bust"
+    t.boolean  "stay"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

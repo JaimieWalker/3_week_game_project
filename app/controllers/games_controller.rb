@@ -51,13 +51,17 @@ class GamesController < ApplicationController
   def hit
     current_user.draw_card(1)
     @game = Game.find(params[:id])
+    #Needs to check for a busted hand
     redirect_to @game
-    
+
   end
 
-def stay
-  
-end
+  def stay
+    current_user.update_columns(stay: true)
+    @game = Game.find(params[:id])
+    #When you stay, the hit button should disappear
+    redirect_to @game
+  end
 
 
 
