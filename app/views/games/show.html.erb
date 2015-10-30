@@ -1,21 +1,35 @@
 <div id="game-container">
 
   <% @game.users.each do |user| %>
-    <%= user.user_name %> Is in da house!!!
-  <% end %>
-  <% if current_user.cards.count < 2 %>
-    <% current_user.draw_card(2) %>
-  <% end %>
-  <% current_user.cards.each do |card| %>
-    <%= image_tag card.name.gsub("app/assets/images/", "") %>
+    <%= user.user_name %> has joined!!!
+      <% if user.cards.count < 2 %>
+        <% user.draw_card(2) %>
+      <% end %>
+      <% value = 0 %>
+    <% user.cards.each do |card| %>
+      <%= image_tag card.name.gsub("app/assets/images/", "") %>
+     <%  value += card.value.to_i %>
+    <% end %>
+     <%= value %>
+    <br>
+    <br>
+
   <% end %>
 
-  <%= button_to [:hit, @game] do %>
-    HIT
+  
+  
+
+<!-- This is the Dealer -->
+
+    <!-- End of dealer -->
+  <% if !current_user.stay %>
+    <%= button_to [:hit, @game] do %>
+      HIT
+    <% end %> 
   <% end %>
-  <%= button_to [:stay, @game] do %>
-    STAY
-  <% end %>
+    <%= button_to [:stay, @game] do %>
+      STAY
+    <% end %>
   
 </div>
 
