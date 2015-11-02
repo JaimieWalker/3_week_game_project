@@ -9,7 +9,7 @@
     <% user.cards.each do |card| %>
       <%= image_tag card.name.gsub("app/assets/images/", "") %>
     <% end %>
-     <% if user.total_value > 21 %>
+     <% if user.busted? %>
       Your hand is bust! <%= user.total_value %>
      <% else %>
       <%= user.total_value %>
@@ -19,13 +19,14 @@
 
   <% end %>
 
+
   
   
 
 <!-- This is the Dealer -->
 
     <!-- End of dealer -->
-  <% if !current_user.stay && current_user.total_value < 21 %>
+  <% if !current_user.stay && !current_user.busted? %>
     <%= button_to [:hit, @game] do %>
       HIT
     <% end %> 

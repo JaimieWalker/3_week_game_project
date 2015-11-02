@@ -34,7 +34,10 @@ class GamesController < ApplicationController
 
   def restart
     @game = Game.find(params[:id])
-    UserCard.restart(@game.users)
+    @game.restart
+    @game.users.each do |user|
+      user.update_columns(stay: false)
+    end
     redirect_to @game
   end
 
@@ -42,7 +45,6 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
 
     if @game.users.length < 4
-      # current_user.create( user_id: current_user.id, game_id: @game.id )
       current_user.update_columns(game_id: @game.id)
     else
       respond_to do |format|
@@ -76,15 +78,13 @@ class GamesController < ApplicationController
 
   def stay
     #Check if everyones stay is true. If so, then the dealer draws
-    current_user.update_columns(stay: true)
     @game = Game.find(params[:id])
-    
-    # users_except_dealer = @game.users.where.not(user_name: 'Dealer')
-    # if @users_except_dealer.where(stay: false).count == 0
+    current_user.update_columns(stay: true)
+    @game.dealer_plays
+    #winner check
+    # if condition
       
     # end
-
-    @game.users
 
     redirect_to @game
   end
