@@ -8,9 +8,10 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email
 
       t.belongs_to :game, index: true
-      t.boolean :dealer
-      t.boolean :bust
-      t.boolean :stay
+      t.boolean :dealer, default: false
+      t.boolean :bust , default: false
+      t.boolean :stay , default: false
+      t.integer :total_value, default: 0
       
 
       t.timestamps null: false

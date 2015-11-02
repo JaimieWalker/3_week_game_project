@@ -31,12 +31,8 @@ class Card < ActiveRecord::Base
   end
 
   def self.reset
-    Card.update_all(drawn :false)
+    Card.update_all(drawn: false)
   end
-
-
-
-
 
 
 end

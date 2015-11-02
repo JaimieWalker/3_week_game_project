@@ -11,10 +11,14 @@ class User < ActiveRecord::Base
 
 
   def draw_card(n)
+    initial_value = self.total_value 
+    value = 0
     n.times do
       card = Card.draw
       self.cards << card
+      value += card.value.to_i
     end
+    self.update_columns(total_value: initial_value + value)
   end
 
   def self.create_dealer

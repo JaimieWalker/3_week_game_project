@@ -1,16 +1,19 @@
 <div id="game-container">
-
+    
   <% @game.users.each do |user| %>
     <%= user.user_name %> has joined!!!
       <% if user.cards.count < 2 %>
         <% user.draw_card(2) %>
       <% end %>
-      <% value = 0 %>
+      
     <% user.cards.each do |card| %>
       <%= image_tag card.name.gsub("app/assets/images/", "") %>
-     <%  value += card.value.to_i %>
     <% end %>
-     <%= value %>
+     <% if user.total_value > 21 %>
+      Your hand is bust! <%= user.total_value %>
+     <% else %>
+      <%= user.total_value %>
+     <% end %>
     <br>
     <br>
 
@@ -22,14 +25,18 @@
 <!-- This is the Dealer -->
 
     <!-- End of dealer -->
-  <% if !current_user.stay %>
+  <% if !current_user.stay && current_user.total_value < 21 %>
     <%= button_to [:hit, @game] do %>
       HIT
     <% end %> 
   <% end %>
     <%= button_to [:stay, @game] do %>
-      STAY
+      STAND
     <% end %>
+    <%= button_to [:restart, @game] do %>
+      RESTART
+    <% end %>
+
   
 </div>
 
