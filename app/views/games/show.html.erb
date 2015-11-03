@@ -21,7 +21,7 @@
 
 <% if @game.game_end? && score = @game.who_won? %>  
   <%= @game.winner %>: Won with <%= score %>
-  <% elsif !@game.who_won? %>
+  <% elsif @game.game_end? %>
   Push: No winner
 <% end %>
   
