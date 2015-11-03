@@ -19,13 +19,13 @@
 
   <% end %>
 
-
+<% if @game.game_end? && score = @game.who_won? %>  
+  <%= @game.winner %>: Won with <%= score %>
+  <% elsif !@game.who_won? %>
+  Push: No winner
+<% end %>
   
-  
 
-<!-- This is the Dealer -->
-
-    <!-- End of dealer -->
   <% if !current_user.stay && !current_user.busted? %>
     <%= button_to [:hit, @game] do %>
       HIT
@@ -40,21 +40,3 @@
 
   
 </div>
-
-
-
-
-<!-- <script>
-  $(function() {
-
-    // Leave Room on navigating away / exiting page
-    $(window).bind('beforeunload', function(e){
-      $.ajax({
-        url: "<%= user_game_path %>",
-        data: { id: <%= current_user.id %> },
-        type: "DELETE",
-        async: false
-      });
-    });
-  });
-</script> -->

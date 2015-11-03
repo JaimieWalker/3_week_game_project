@@ -56,7 +56,6 @@ class GamesController < ApplicationController
   def destroy
     @game = Game.find(params[:id])
     @game.users.each do |user|
-      # current_user.where(user_id: user.id, game_id: @game.id ).destroy
       current_user.update_columns(game_id: nil)
     end
     @game.destroy
@@ -81,11 +80,7 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     current_user.update_columns(stay: true)
     @game.dealer_plays
-    #winner check
-    # if condition
-      
-    # end
-
+    
     redirect_to @game
   end
 

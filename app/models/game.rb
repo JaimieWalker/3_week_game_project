@@ -18,31 +18,31 @@ class Game < ActiveRecord::Base
   end
 
   def game_end?
-    users.where(stay: false).count == 0
+    not_busted_users = users.where(bust: false)
+    users.where(stay: false).count == 0 || not_busted_users.count == 1
   end
 
-  def winner
+  def who_won?
     #We can start keeping score from here if we want
-    if self.game_end?
-      not_busted_users = users.where(busted: false)
-      max = not_busted_users.maximum(total_value)
+    
+      not_busted_users = users.where(bust: false)
+      max = not_busted_users.maximum("total_value")
       winners = not_busted_users.where(total_value: max)
+        # binding.pry
 
       if (winners.count == 1)
         self.update_columns(winner: winners.first.user_name)
-        return true
+        return max
       else
         #This is a push
         return false
       end
-      
-    end
   end
 
   def restart
     self.users.each do |user|
       UserCard.where(user_id: user.id).destroy_all
-      user.update_columns(total_value: 0, stay: false )
+      user.update_columns(total_value: 0, stay: false, bust: false)
     end
     self.update_columns(winner: nil)
     Card.reset
