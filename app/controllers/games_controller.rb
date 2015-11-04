@@ -21,7 +21,7 @@ class GamesController < ApplicationController
       if @game.save 
         @game.users << User.create_dealer
         @game.users.last.update_columns(game_id: @game.id)
-        
+      
         # current_user.create( user_id: current_user.id, game_id: @game.id )
         current_user.update_columns(game_id: @game.id)
         format.html { redirect_to @game, notice: "Game Room created!" }
