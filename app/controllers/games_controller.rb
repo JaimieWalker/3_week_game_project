@@ -15,13 +15,12 @@ class GamesController < ApplicationController
     #Creates a dealer automatically for that room
     # binding.pry
 
-    
+
 
     respond_to do |format|
-      if @game.save 
+      if @game.save
         @game.users << User.create_dealer
         @game.users.last.update_columns(game_id: @game.id)
-      
         # current_user.create( user_id: current_user.id, game_id: @game.id )
         current_user.update_columns(game_id: @game.id)
         format.html { redirect_to @game, notice: "Game Room created!" }
@@ -32,11 +31,19 @@ class GamesController < ApplicationController
     end
   end
 
+  def restart
+    @game = Game.find(params[:id])
+    @game.restart
+    @game.users.each do |user|
+      user.update_columns(stay: false)
+    end
+    redirect_to @game
+  end
+
   def show
     @game = Game.find(params[:id])
 
     if @game.users.length < 4
-      # current_user.create( user_id: current_user.id, game_id: @game.id )
       current_user.update_columns(game_id: @game.id)
     else
       respond_to do |format|
@@ -48,7 +55,6 @@ class GamesController < ApplicationController
   def destroy
     @game = Game.find(params[:id])
     @game.users.each do |user|
-      # current_user.where(user_id: user.id, game_id: @game.id ).destroy
       current_user.update_columns(game_id: nil)
     end
     @game.destroy
@@ -57,7 +63,7 @@ class GamesController < ApplicationController
 
 
   def hit
-    
+
     #draw a card unless the user has stayed
     unless current_user.stay
       current_user.draw_card(1)
@@ -70,9 +76,10 @@ class GamesController < ApplicationController
 
   def stay
     #Check if everyones stay is true. If so, then the dealer draws
-    current_user.update_columns(stay: true)
     @game = Game.find(params[:id])
-    #When you stay, the hit button should disappear
+    current_user.update_columns(stay: true)
+    @game.dealer_plays
+    
     redirect_to @game
   end
 

@@ -7,14 +7,19 @@ class User < ActiveRecord::Base
   has_many :cards, through: :user_cards
 
   validates :email, presence: true, uniqueness: true
+  validates :user_name, presence: true, uniqueness: true
   validates :password, presence: true
 
 
   def draw_card(n)
+    initial_value = self.total_value
+    value = 0
     n.times do
       card = Card.draw
       self.cards << card
+      value += card.value.to_i
     end
+    self.update_columns(total_value: initial_value + value)
   end
 
   def self.create_dealer
@@ -24,5 +29,18 @@ class User < ActiveRecord::Base
     User.set_callback(:create)
     dealer
   end
+
+  def self.dealer(users)
+    users.where(dealer: true)
+  end
+
+  def busted?
+    if bool = (self.total_value > 21)
+      self.update_columns(bust: true)
+    end
+    bool
+  end
+
+
 
 end

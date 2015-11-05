@@ -1,52 +1,42 @@
 <div id="game-container">
-
+    
   <% @game.users.each do |user| %>
     <%= user.user_name %> has joined!!!
       <% if user.cards.count < 2 %>
         <% user.draw_card(2) %>
       <% end %>
-      <% value = 0 %>
+      
     <% user.cards.each do |card| %>
       <%= image_tag card.name.gsub("app/assets/images/", "") %>
-     <%  value += card.value.to_i %>
     <% end %>
-     <%= value %>
+     <% if user.busted? %>
+      Your hand is bust! <%= user.total_value %>
+     <% else %>
+      <%= user.total_value %>
+     <% end %>
     <br>
     <br>
 
   <% end %>
 
-  
+<% if @game.game_end? && score = @game.who_won? %>  
+  <%= @game.winner %>: Won with <%= score %>
+  <% elsif @game.game_end? %>
+  Push: No winner
+<% end %>
   
 
-<!-- This is the Dealer -->
-
-    <!-- End of dealer -->
-  <% if !current_user.stay %>
+  <% if !current_user.stay && !current_user.busted? %>
     <%= button_to [:hit, @game] do %>
       HIT
     <% end %> 
   <% end %>
     <%= button_to [:stay, @game] do %>
-      STAY
+      STAND
     <% end %>
+    <%= button_to [:restart, @game] do %>
+      RESTART
+    <% end %>
+
   
 </div>
-
-
-
-
-<!-- <script>
-  $(function() {
-
-    // Leave Room on navigating away / exiting page
-    $(window).bind('beforeunload', function(e){
-      $.ajax({
-        url: "<%= user_game_path %>",
-        data: { id: <%= current_user.id %> },
-        type: "DELETE",
-        async: false
-      });
-    });
-  });
-</script> -->

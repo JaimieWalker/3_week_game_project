@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
    post '/games/:id/hit' => 'games#hit', as: :hit_game
-    post 'games/:id/stay' => 'games#stay', as: :stay_game
+    post '/games/:id/stay' => 'games#stay', as: :stay_game
+    post '/games/:id/restart' => 'games#restart', as: :restart_game
     root :to => 'games#index'
     get '/signup' => 'users#new'
     get '/login' => 'sessions#new'
     post '/login' => 'sessions#create'
     delete '/logout' => 'sessions#destroy'
+    
     
     resources :users
     resources :games
