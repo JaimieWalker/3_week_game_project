@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
     initial_value = self.total_value
     value = 0
     n.times do
-      card = Card.draw
+      card = Card.draw(game)
       self.cards << card
       value += card.value.to_i
     end
@@ -30,8 +30,8 @@ class User < ActiveRecord::Base
     dealer
   end
 
-  def self.dealer(users)
-    users.where(dealer: true)
+  def self.dealer(in_room)
+    in_room.where(dealer: true)
   end
 
   def busted?

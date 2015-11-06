@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20151028173442) do
 
   create_table "cards", force: :cascade do |t|
     t.string   "name"
+    t.string   "face"
     t.string   "value"
     t.string   "suit"
     t.boolean  "drawn",      default: false

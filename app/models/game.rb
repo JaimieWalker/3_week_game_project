@@ -3,7 +3,6 @@ class Game < ActiveRecord::Base
   belongs_to :gametype
   has_many :users
   has_many :game_cards
-
   has_many :cards, through: :game_cards
 
   def dealer_plays
@@ -45,7 +44,16 @@ class Game < ActiveRecord::Base
       user.update_columns(total_value: 0, stay: false, bust: false)
     end
     self.update_columns(winner: nil)
-    Card.reset
+    Card.reset(self)
+  end
+
+  def active?
+    if users.count > 1
+      return true
+    elsif users.count == 1 && users.first.user_name == "Dealer"
+      self.update_columns(active: false)
+      return false
+    end
   end
 
 end

@@ -1,13 +1,23 @@
 class GamesController < ApplicationController
   before_action :require_user, only: [:index, :new, :show]
   def index
+    # cpu_games = @games.users.where(user_name: "Dealer")
+    # cpu_games.each do |game|
+    #   @game.users.count
+    # end
     @games = Game.all
+    @games.each do |game|
+      unless game.active?
+        game.restart
+        game.destroy
+      end
+    end
     current_user.update_columns(game_id: nil)
+
   end
 
   def new
     @game = Game.new
-    Card.create_deck
   end
 
   def create
@@ -15,10 +25,10 @@ class GamesController < ApplicationController
     #Creates a dealer automatically for that room
     # binding.pry
 
-
-
     respond_to do |format|
       if @game.save
+        Card.create_deck(@game)
+        @game.update_columns(active: true)
         @game.users << User.create_dealer
         @game.users.last.update_columns(game_id: @game.id)
 
@@ -80,7 +90,7 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     current_user.update_columns(stay: true)
     @game.dealer_plays
-    
+
     redirect_to @game
   end
 
