@@ -1,4 +1,4 @@
-<div id="game-container">
+<div id="game-container" align="center">
     
   <% @game.users.each do |user| %>
     <%= user.user_name %> has joined!!!
@@ -24,19 +24,120 @@
   <% elsif @game.game_end? %>
   Push: No winner
 <% end %>
-  
 
-  <% if !current_user.stay && !current_user.busted? %>
-    <%= button_to [:hit, @game] do %>
-      HIT
+   <% if !current_user.stay && !current_user.busted? %>
+ <div  class="Button Button--select"> <%= button_to [:hit, @game] do%> <span>Hit</span></div>
+
+     
     <% end %> 
   <% end %>
-    <%= button_to [:stay, @game] do %>
-      STAND
+  <div class="Button Button--select"> <%= button_to [:stay, @game] do%> <span>Stay</span></div>
+
+     
     <% end %>
-    <%= button_to [:restart, @game] do %>
-      RESTART
+  <div class="Button Button--select"> <%= button_to [:restart, @game] do%> <span>R</span></div>
+
     <% end %>
 
   
 </div>
+
+<style>
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+  background-color:#135c09;
+  background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAaUlEQVQIW2MUSHP/z/ztEMNfLg+GPx+3MAjwczMwypaK/n//6AOYAwIvXn5nYGTxZ//PoCjFwPH8CcOPH0wMIDYjTzjr/x+SMgw839QYvnDdAtOMAmmB/5m/7WD4+Pkfg7CaGcPPj1wMAFY6I/ye5jZdAAAAAElFTkSuQmCC);
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+* {
+  outline: 0;
+}
+.Wrapper {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.Button {
+  margin-bottom: 50px;
+  -webkit-perspective: 600px;
+          perspective: 600px;
+}
+
+.Button.Button--select {
+  width: 60px;
+  height: 60px;
+  background-color: yellow;
+  float: left;
+  margin: 15px;
+}
+.Button.Button--select button {
+  border-radius: 50%;
+}
+button {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  box-shadow: 0px 0px 0px #750014;
+  background: -webkit-radial-gradient(center, ellipse, #d60d2e 0%, #c20020 100%);
+  background: radial-gradient(ellipse at center, #d60d2e 0%, #c20020 100%);
+  -webkit-transition: -webkit-transform 0.15s, box-shadow 0.15s;
+          transition: transform 0.15s, box-shadow 0.15s;
+  -webkit-transform: rotateX(0deg) translateY(0);
+          transform: rotateX(0deg) translateY(0);
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+}
+button:hover {
+  box-shadow: 0px 5px 0px #750014;
+  border-radius: 8px;
+  -webkit-transform: rotateX(30deg) translateY(0);
+          transform: rotateX(30deg) translateY(0);
+}
+button:hover:active {
+  text-shadow: 0 0 4px #ad001d;
+  box-shadow: 0 1px 0 #423847;
+  background: -webkit-radial-gradient(center, ellipse, #ff002b 0%, #ed0028 100%);
+  background: radial-gradient(ellipse at center, #ff002b 0%, #ed0028 100%);
+  -webkit-transition: -webkit-transform 0.05s, box-shadow 0.05s;
+          transition: transform 0.05s, box-shadow 0.05s;
+  -webkit-transform: rotateX(30deg) translateY(4px);
+          transform: rotateX(30deg) translateY(4px);
+}
+button span {
+  position: relative;
+  font-size: 21px;
+  color: #fff;
+  text-transform: uppercase;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+</style>
