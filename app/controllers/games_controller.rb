@@ -9,6 +9,7 @@ class GamesController < ApplicationController
     @games.each do |game|
       unless game.active?
         game.restart
+        GameCard.cards_in_game(game).destroy_all
         game.destroy
       end
     end

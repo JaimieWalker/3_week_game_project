@@ -27,6 +27,7 @@ class Card < ActiveRecord::Base
        GameCard.create(game_id: game.id, card_id: game_card.id)
       end
     end
+
   end
   # end
 
